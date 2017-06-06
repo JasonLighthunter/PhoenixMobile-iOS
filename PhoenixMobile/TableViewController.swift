@@ -20,7 +20,7 @@ class TableViewController: UITableViewController {
     self.title = "Loading..."
 
     let nc = NotificationCenter.default
-    nc.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: nil, using: catchNotification)
+    _ = nc.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: nil, using: catchNotification)
 
     UIApplication.shared.isNetworkActivityIndicatorVisible = true
 
@@ -35,11 +35,10 @@ class TableViewController: UITableViewController {
 //      print("test")  
 //    }
 
-    let filters = ["text" : "titan"]
+    let filters = ["text": "titan"]
 
     PhoenixCore.getCollection(ofType: "anime", withFilters: filters) { searchResult, error in
       if let result = searchResult {
-        
         DispatchQueue.main.async {
           self.items = (result.list as? [Anime])!
           self.title = "Search results for: \"\(filters["text"] ?? "NO SEARCH TEXT FOUND")\""
@@ -73,13 +72,14 @@ class TableViewController: UITableViewController {
     return items.count
   }
 
-  override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+  override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle,
+                          forRowAt indexPath: IndexPath)
+  {
     tableView.beginUpdates()
     tableView.deleteRows(at: [indexPath], with: .automatic)
     self.items.remove(at: indexPath.row)
     tableView.endUpdates()
   }
-
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
