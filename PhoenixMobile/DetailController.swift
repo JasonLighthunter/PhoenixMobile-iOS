@@ -17,7 +17,7 @@ class DetailController: UIViewController {
 
   override func viewDidLoad() {
     let nc = NotificationCenter.default
-    nc.addObserver(forName:UserDefaults.didChangeNotification, object: nil, queue: nil, using: catchNotification)
+    _ = nc.addObserver(forName:UserDefaults.didChangeNotification, object: nil, queue: nil, using: catchNotification)
 
     let key = "display_language_preference"
     var titleLanguageEnum: TitleLanguageIdentifierEnum = TitleLanguageIdentifierEnum.canonical
@@ -30,7 +30,7 @@ class DetailController: UIViewController {
 
     UIApplication.shared.isNetworkActivityIndicatorVisible = true
 
-    ImageFetcher.getFrom(URL(string: (self.anime!.attributes?.posterImage?.small)!)!) { imageResult, error in
+    ImageFetcher.getFrom(URL(string: (self.anime!.attributes?.posterImage?.small)!)!) { imageResult, _ in
       if let image = imageResult {
         DispatchQueue.main.async {
           self.posterImageView.image = image

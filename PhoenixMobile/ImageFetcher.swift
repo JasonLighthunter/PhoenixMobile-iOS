@@ -17,7 +17,7 @@ class ImageFetcher {
       request.setValue("application/vnd.api+json", forHTTPHeaderField: "Accept")
       request.setValue("application/vnd.api+json", forHTTPHeaderField: "Content-Type")
 
-      request.httpMethod = "GET";
+      request.httpMethod = "GET"
 
       let task = URLSession.shared.dataTask(with: request as URLRequest) { data, _, error in
         var image: UIImage?
