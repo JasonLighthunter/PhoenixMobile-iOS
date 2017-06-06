@@ -73,8 +73,7 @@ class TableViewController: UITableViewController {
   }
 
   override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle,
-                          forRowAt indexPath: IndexPath)
-  {
+                          forRowAt indexPath: IndexPath) {
     tableView.beginUpdates()
     tableView.deleteRows(at: [indexPath], with: .automatic)
     self.items.remove(at: indexPath.row)
