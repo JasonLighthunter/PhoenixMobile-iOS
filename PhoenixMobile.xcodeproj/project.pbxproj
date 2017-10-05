@@ -7,14 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C03B8521F86B3380023C0AB /* MangaDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C03B8511F86B3380023C0AB /* MangaDetailViewController.swift */; };
 		7C48DB681EE69FBE00BD69C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C48DB671EE69FBE00BD69C8 /* AppDelegate.swift */; };
 		7C48DB6F1EE69FE300BD69C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C48DB691EE69FE300BD69C8 /* Assets.xcassets */; };
-		7C48DB711EE69FE300BD69C8 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C48DB6B1EE69FE300BD69C8 /* DetailController.swift */; };
+		7C48DB711EE69FE300BD69C8 /* AnimeDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C48DB6B1EE69FE300BD69C8 /* AnimeDetailController.swift */; };
 		7C48DB721EE69FE300BD69C8 /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C48DB6C1EE69FE300BD69C8 /* ImageFetcher.swift */; };
-		7C48DB741EE69FE300BD69C8 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C48DB6E1EE69FE300BD69C8 /* TableViewController.swift */; };
+		7C48DB741EE69FE300BD69C8 /* AnimeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C48DB6E1EE69FE300BD69C8 /* AnimeTableViewController.swift */; };
 		7C48DB841EE6A0A000BD69C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C48DB801EE6A0A000BD69C8 /* LaunchScreen.storyboard */; };
 		7C48DB851EE6A0A000BD69C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C48DB821EE6A0A000BD69C8 /* Main.storyboard */; };
 		7C48DB861EE6A0D300BD69C8 /* PhoenixCoreSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C48DB7F1EE6A01C00BD69C8 /* PhoenixCoreSwift.framework */; };
+		7CAFD7D91EF95D9C0028768D /* MangaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAFD7D81EF95D9C0028768D /* MangaTableViewController.swift */; };
 		7CE8333E1E9B91770058BF41 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7CE8333D1E9B91770058BF41 /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +35,13 @@
 			remoteGlobalIDString = 7CB374901E3B978E00DF8601;
 			remoteInfo = "PhoenixCoreSwift iOS";
 		};
+		7CAFD7D61EF95D4F0028768D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7C48DB771EE6A01C00BD69C8 /* PhoenixCoreSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7C2536061EE9911C0053E80B;
+			remoteInfo = PhoenixCoreSwiftTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,16 +58,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7C03B8511F86B3380023C0AB /* MangaDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MangaDetailViewController.swift; path = PhoenixMobile/MangaDetailViewController.swift; sourceTree = SOURCE_ROOT; };
 		7C19A88C1E534EB800AF0590 /* PhoenixMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhoenixMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C48DB671EE69FBE00BD69C8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = PhoenixMobile/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		7C48DB691EE69FE300BD69C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = PhoenixMobile/Assets.xcassets; sourceTree = SOURCE_ROOT; };
-		7C48DB6B1EE69FE300BD69C8 /* DetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailController.swift; path = PhoenixMobile/DetailController.swift; sourceTree = SOURCE_ROOT; };
+		7C48DB6B1EE69FE300BD69C8 /* AnimeDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimeDetailController.swift; path = PhoenixMobile/AnimeDetailController.swift; sourceTree = SOURCE_ROOT; };
 		7C48DB6C1EE69FE300BD69C8 /* ImageFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageFetcher.swift; path = PhoenixMobile/ImageFetcher.swift; sourceTree = SOURCE_ROOT; };
-		7C48DB6E1EE69FE300BD69C8 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewController.swift; path = PhoenixMobile/TableViewController.swift; sourceTree = SOURCE_ROOT; };
+		7C48DB6E1EE69FE300BD69C8 /* AnimeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimeTableViewController.swift; path = PhoenixMobile/AnimeTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		7C48DB771EE6A01C00BD69C8 /* PhoenixCoreSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PhoenixCoreSwift.xcodeproj; path = ../PhoenixCoreSwift/PhoenixCoreSwift.xcodeproj; sourceTree = "<group>"; };
 		7C48DB811EE6A0A000BD69C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = PhoenixMobile/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		7C48DB831EE6A0A000BD69C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = PhoenixMobile/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		7C48DB8A1EE6A15700BD69C8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = PhoenixMobile/Info.plist; sourceTree = SOURCE_ROOT; };
+		7CAFD7D81EF95D9C0028768D /* MangaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MangaTableViewController.swift; path = PhoenixMobile/MangaTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		7CE8333D1E9B91770058BF41 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,9 +111,11 @@
 				7C48DB821EE6A0A000BD69C8 /* Main.storyboard */,
 				7C48DB671EE69FBE00BD69C8 /* AppDelegate.swift */,
 				7C48DB691EE69FE300BD69C8 /* Assets.xcassets */,
-				7C48DB6B1EE69FE300BD69C8 /* DetailController.swift */,
+				7C48DB6B1EE69FE300BD69C8 /* AnimeDetailController.swift */,
 				7C48DB6C1EE69FE300BD69C8 /* ImageFetcher.swift */,
-				7C48DB6E1EE69FE300BD69C8 /* TableViewController.swift */,
+				7C48DB6E1EE69FE300BD69C8 /* AnimeTableViewController.swift */,
+				7CAFD7D81EF95D9C0028768D /* MangaTableViewController.swift */,
+				7C03B8511F86B3380023C0AB /* MangaDetailViewController.swift */,
 			);
 			name = PhoenixMobile;
 			path = TestPhoenixMobile;
@@ -113,6 +126,7 @@
 			children = (
 				7C48DB7D1EE6A01C00BD69C8 /* PhoenixCoreSwift.framework */,
 				7C48DB7F1EE6A01C00BD69C8 /* PhoenixCoreSwift.framework */,
+				7CAFD7D71EF95D4F0028768D /* PhoenixCoreSwiftTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -145,11 +159,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Job Cuppen";
 				TargetAttributes = {
 					7C19A88B1E534EB800AF0590 = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -193,6 +208,13 @@
 			remoteRef = 7C48DB7E1EE6A01C00BD69C8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		7CAFD7D71EF95D4F0028768D /* PhoenixCoreSwiftTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = PhoenixCoreSwiftTests.xctest;
+			remoteRef = 7CAFD7D61EF95D4F0028768D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -214,9 +236,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C48DB741EE69FE300BD69C8 /* TableViewController.swift in Sources */,
+				7C48DB741EE69FE300BD69C8 /* AnimeTableViewController.swift in Sources */,
+				7CAFD7D91EF95D9C0028768D /* MangaTableViewController.swift in Sources */,
 				7C48DB721EE69FE300BD69C8 /* ImageFetcher.swift in Sources */,
-				7C48DB711EE69FE300BD69C8 /* DetailController.swift in Sources */,
+				7C48DB711EE69FE300BD69C8 /* AnimeDetailController.swift in Sources */,
+				7C03B8521F86B3380023C0AB /* MangaDetailViewController.swift in Sources */,
 				7C48DB681EE69FBE00BD69C8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,7 +276,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -260,7 +286,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -283,7 +313,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -302,7 +332,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -310,7 +342,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -327,7 +363,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -341,13 +377,17 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6Z7U3Z74Y3;
 				INFOPLIST_FILE = "$(SRCROOT)/PhoenixMobile/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jobcuppen.PhoenixMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -357,13 +397,17 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6Z7U3Z74Y3;
 				INFOPLIST_FILE = "$(SRCROOT)/PhoenixMobile/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jobcuppen.PhoenixMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

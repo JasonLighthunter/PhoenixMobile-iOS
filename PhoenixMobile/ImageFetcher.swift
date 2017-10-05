@@ -20,11 +20,9 @@ class ImageFetcher {
       request.httpMethod = "GET"
 
       let task = URLSession.shared.dataTask(with: request as URLRequest) { data, _, error in
-        var image: UIImage?
+        guard let data = data else { return callback(nil, error) }
 
-        if let data = data {
-          image = UIImage(data: data)
-        }
+        let image = UIImage(data: data)
         callback(image, error)
       }
       task.resume()
