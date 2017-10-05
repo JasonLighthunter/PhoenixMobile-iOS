@@ -1,19 +1,20 @@
 //
-//  DetailController.swift
+//  MangaDetailViewController.swift
 //  PhoenixMobile
 //
-//  Created by Job Cuppen on 14/02/2017.
+//  Created by Job Cuppen on 05/10/2017.
 //  Copyright © 2017 Job Cuppen. All rights reserved.
+//
 
 import UIKit
 import PhoenixCoreSwift
 
-class DetailController: UIViewController {
+class MangaDetailViewController: UIViewController {
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var synopsisLabel: UILabel!
   @IBOutlet weak var posterImageView: UIImageView!
 
-  var anime: Anime?
+  var manga: Manga?
 
   override func viewDidLoad() {
     let nc = NotificationCenter.default
@@ -23,14 +24,14 @@ class DetailController: UIViewController {
     var titleLanguageEnum: TitleLanguageIdentifierEnum = TitleLanguageIdentifierEnum.canonical
 
     if let titleLanguage: String = UserDefaults.standard.string(forKey: key) {
-      titleLanguageEnum = TitleLanguageIdentifierEnum(titleLanguage)
+      titleLanguageEnum = TitleLanguageIdentifierEnum(rawValue: titleLanguage)!
     }
 
-    titleLabel.text = self.anime?.getTitleWith(identifier: titleLanguageEnum)
+    titleLabel.text = manga?.getTitleWith(identifier: titleLanguageEnum)
 
     UIApplication.shared.isNetworkActivityIndicatorVisible = true
 
-    ImageFetcher.getFrom(URL(string: (self.anime!.attributes?.posterImage?.small)!)!) { imageResult, _ in
+    ImageFetcher.getFrom(URL(string: (manga?.attributes?.posterImage?.small)!)!) { imageResult, _ in
       if let image = imageResult {
         DispatchQueue.main.async {
           self.posterImageView.image = image
@@ -39,7 +40,7 @@ class DetailController: UIViewController {
       }
     }
 
-    synopsisLabel.text = self.anime?.attributes?.synopsis
+    synopsisLabel.text = manga?.attributes?.synopsis
   }
 
   private func catchNotification(notification: Notification) {
@@ -47,9 +48,9 @@ class DetailController: UIViewController {
     var titleLanguageEnum: TitleLanguageIdentifierEnum = TitleLanguageIdentifierEnum.canonical
 
     if let titleLanguage: String = UserDefaults.standard.string(forKey: key) {
-      titleLanguageEnum = TitleLanguageIdentifierEnum(titleLanguage)
+      titleLanguageEnum = TitleLanguageIdentifierEnum(rawValue: titleLanguage)!
     }
 
-    titleLabel.text = self.anime?.getTitleWith(identifier: titleLanguageEnum)
+    titleLabel.text = manga?.getTitleWith(identifier: titleLanguageEnum)
   }
 }
