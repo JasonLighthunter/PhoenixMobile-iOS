@@ -8,30 +8,22 @@
 import UIKit
 import PhoenixCoreSwift
 
-class MangaTableViewController: UITableViewController {
+class MangaTableViewController: PhoenixTableViewController {
+  private let dataType = Manga.self
   private var items: [Manga] = []
-  private var latestNextLink: String?
+  let filters = ["text": "titan"]
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
     self.title = "Manga"
 
-    let nc = NotificationCenter.default
-    _ = nc.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: nil, using: catchNotification)
-
-    UIApplication.shared.isNetworkActivityIndicatorVisible = true
-
-    let filters = ["text" : "titan"]
-
     do {
-      try PhoenixCore.getCollection(ofType: Manga.self, withFilters: filters) { searchResult in
+      try PhoenixCore.getCollection(ofType: dataType.self, withFilters: filters) { searchResult in
         if let result = searchResult {
           DispatchQueue.main.async {
-            self.items = (result.list as? [Manga])!
-            self.latestNextLink = result.pagingLinks.next
-            self.tableView.reloadData()
-            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            self.items.append(contentsOf: result.data)
+            super.addResultToItems(result)
           }
         }
       }
@@ -42,13 +34,9 @@ class MangaTableViewController: UITableViewController {
     }
   }
 
-  private func catchNotification(notification: Notification) {
-    self.tableView.reloadData()
-  }
-
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let detailcontroller = segue.destination as? MangaDetailViewController {
-      detailcontroller.manga = items[self.tableView.indexPathForSelectedRow!.row]
+      detailcontroller.mediaItem = items[self.tableView.indexPathForSelectedRow!.row]
     }
   }
 
@@ -61,11 +49,7 @@ class MangaTableViewController: UITableViewController {
 
     let manga = items[indexPath.row]
 
-    var titleLanguageEnum = TitleLanguageIdentifierEnum.canonical
-
-    if let titleLanguagePreferenceString = UserDefaults.standard.string(forKey: "display_language_preference") {
-      titleLanguageEnum = TitleLanguageIdentifierEnum(rawValue: titleLanguagePreferenceString)!
-    }
+    let titleLanguageEnum = getTitleLanguageEnum()
 
     cell.textLabel?.text = manga.getTitleWith(identifier: titleLanguageEnum)
     cell.detailTextLabel?.text = manga.attributes?.slug
@@ -84,17 +68,12 @@ class MangaTableViewController: UITableViewController {
       UIApplication.shared.isNetworkActivityIndicatorVisible = true
 
       //only prevents adding to list not firing request.
-
       do {
-        try PhoenixCore.getCollection(ofType: Manga.self, byURL: next) { searchResult in
+        try PhoenixCore.getCollection(ofType: dataType, byURL: next) { searchResult in
           if let result = searchResult {
             DispatchQueue.main.async {
-              if self.latestNextLink != result.pagingLinks.next {
-                self.latestNextLink = result.pagingLinks.next
-                self.items.append(contentsOf: (result.list as? [Manga])!)
-                self.tableView.reloadData()
-              }
-              UIApplication.shared.isNetworkActivityIndicatorVisible = false
+              self.items.append(contentsOf: result.data)
+              super.addResultToItems(result)
             }
           }
         }

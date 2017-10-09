@@ -10,12 +10,14 @@
 		7C03B8521F86B3380023C0AB /* MangaDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C03B8511F86B3380023C0AB /* MangaDetailViewController.swift */; };
 		7C48DB681EE69FBE00BD69C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C48DB671EE69FBE00BD69C8 /* AppDelegate.swift */; };
 		7C48DB6F1EE69FE300BD69C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C48DB691EE69FE300BD69C8 /* Assets.xcassets */; };
-		7C48DB711EE69FE300BD69C8 /* AnimeDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C48DB6B1EE69FE300BD69C8 /* AnimeDetailController.swift */; };
+		7C48DB711EE69FE300BD69C8 /* AnimeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C48DB6B1EE69FE300BD69C8 /* AnimeDetailViewController.swift */; };
 		7C48DB721EE69FE300BD69C8 /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C48DB6C1EE69FE300BD69C8 /* ImageFetcher.swift */; };
 		7C48DB741EE69FE300BD69C8 /* AnimeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C48DB6E1EE69FE300BD69C8 /* AnimeTableViewController.swift */; };
 		7C48DB841EE6A0A000BD69C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C48DB801EE6A0A000BD69C8 /* LaunchScreen.storyboard */; };
 		7C48DB851EE6A0A000BD69C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C48DB821EE6A0A000BD69C8 /* Main.storyboard */; };
 		7C48DB861EE6A0D300BD69C8 /* PhoenixCoreSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C48DB7F1EE6A01C00BD69C8 /* PhoenixCoreSwift.framework */; };
+		7C8329441F8BF80700BD4B6E /* PhoenixTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8329431F8BF80700BD4B6E /* PhoenixTableViewController.swift */; };
+		7C8329491F8BF87D00BD4B6E /* PhoenixDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8329481F8BF87D00BD4B6E /* PhoenixDetailViewController.swift */; };
 		7CAFD7D91EF95D9C0028768D /* MangaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAFD7D81EF95D9C0028768D /* MangaTableViewController.swift */; };
 		7CE8333E1E9B91770058BF41 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7CE8333D1E9B91770058BF41 /* Settings.bundle */; };
 /* End PBXBuildFile section */
@@ -62,13 +64,15 @@
 		7C19A88C1E534EB800AF0590 /* PhoenixMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhoenixMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C48DB671EE69FBE00BD69C8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = PhoenixMobile/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		7C48DB691EE69FE300BD69C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = PhoenixMobile/Assets.xcassets; sourceTree = SOURCE_ROOT; };
-		7C48DB6B1EE69FE300BD69C8 /* AnimeDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimeDetailController.swift; path = PhoenixMobile/AnimeDetailController.swift; sourceTree = SOURCE_ROOT; };
+		7C48DB6B1EE69FE300BD69C8 /* AnimeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimeDetailViewController.swift; path = PhoenixMobile/AnimeDetailViewController.swift; sourceTree = SOURCE_ROOT; };
 		7C48DB6C1EE69FE300BD69C8 /* ImageFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageFetcher.swift; path = PhoenixMobile/ImageFetcher.swift; sourceTree = SOURCE_ROOT; };
 		7C48DB6E1EE69FE300BD69C8 /* AnimeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimeTableViewController.swift; path = PhoenixMobile/AnimeTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		7C48DB771EE6A01C00BD69C8 /* PhoenixCoreSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PhoenixCoreSwift.xcodeproj; path = ../PhoenixCoreSwift/PhoenixCoreSwift.xcodeproj; sourceTree = "<group>"; };
 		7C48DB811EE6A0A000BD69C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = PhoenixMobile/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		7C48DB831EE6A0A000BD69C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = PhoenixMobile/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		7C48DB8A1EE6A15700BD69C8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = PhoenixMobile/Info.plist; sourceTree = SOURCE_ROOT; };
+		7C8329431F8BF80700BD4B6E /* PhoenixTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhoenixTableViewController.swift; path = PhoenixMobile/PhoenixTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		7C8329481F8BF87D00BD4B6E /* PhoenixDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhoenixDetailViewController.swift; path = PhoenixMobile/PhoenixDetailViewController.swift; sourceTree = SOURCE_ROOT; };
 		7CAFD7D81EF95D9C0028768D /* MangaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MangaTableViewController.swift; path = PhoenixMobile/MangaTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		7CE8333D1E9B91770058BF41 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,11 +115,13 @@
 				7C48DB821EE6A0A000BD69C8 /* Main.storyboard */,
 				7C48DB671EE69FBE00BD69C8 /* AppDelegate.swift */,
 				7C48DB691EE69FE300BD69C8 /* Assets.xcassets */,
-				7C48DB6B1EE69FE300BD69C8 /* AnimeDetailController.swift */,
+				7C48DB6B1EE69FE300BD69C8 /* AnimeDetailViewController.swift */,
 				7C48DB6C1EE69FE300BD69C8 /* ImageFetcher.swift */,
 				7C48DB6E1EE69FE300BD69C8 /* AnimeTableViewController.swift */,
 				7CAFD7D81EF95D9C0028768D /* MangaTableViewController.swift */,
 				7C03B8511F86B3380023C0AB /* MangaDetailViewController.swift */,
+				7C8329431F8BF80700BD4B6E /* PhoenixTableViewController.swift */,
+				7C8329481F8BF87D00BD4B6E /* PhoenixDetailViewController.swift */,
 			);
 			name = PhoenixMobile;
 			path = TestPhoenixMobile;
@@ -237,9 +243,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C48DB741EE69FE300BD69C8 /* AnimeTableViewController.swift in Sources */,
+				7C8329441F8BF80700BD4B6E /* PhoenixTableViewController.swift in Sources */,
 				7CAFD7D91EF95D9C0028768D /* MangaTableViewController.swift in Sources */,
+				7C8329491F8BF87D00BD4B6E /* PhoenixDetailViewController.swift in Sources */,
 				7C48DB721EE69FE300BD69C8 /* ImageFetcher.swift in Sources */,
-				7C48DB711EE69FE300BD69C8 /* AnimeDetailController.swift in Sources */,
+				7C48DB711EE69FE300BD69C8 /* AnimeDetailViewController.swift in Sources */,
 				7C03B8521F86B3380023C0AB /* MangaDetailViewController.swift in Sources */,
 				7C48DB681EE69FBE00BD69C8 /* AppDelegate.swift in Sources */,
 			);

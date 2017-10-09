@@ -10,7 +10,7 @@ import UIKit
 class ImageFetcher {
   static let imageFetcherSyncQueue = DispatchQueue(label: "nl.phoenixMobile.imageFetcher")
 
-  class func getFrom(_ url: URL, callback: @escaping (UIImage?, Error?) -> Void) {
+  class func getFrom(_ url: URL, callback: @escaping (UIImage?) -> Void) {
     imageFetcherSyncQueue.async {
       let request = NSMutableURLRequest(url: url)
 
@@ -20,10 +20,10 @@ class ImageFetcher {
       request.httpMethod = "GET"
 
       let task = URLSession.shared.dataTask(with: request as URLRequest) { data, _, error in
-        guard let data = data else { return callback(nil, error) }
+        guard let data = data else { return callback(nil) }
 
         let image = UIImage(data: data)
-        callback(image, error)
+        callback(image)
       }
       task.resume()
     }

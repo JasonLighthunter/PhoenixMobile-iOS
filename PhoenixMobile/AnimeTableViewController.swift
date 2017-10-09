@@ -8,31 +8,22 @@
 import UIKit
 import PhoenixCoreSwift
 
-class AnimeTableViewController: UITableViewController {
+class AnimeTableViewController: PhoenixTableViewController {
   private let dataType = Anime.self
   private var items: [Anime] = []
-  private var latestNextLink: String?
+  let filters = ["text": "rwby"]
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
     self.title = "Anime"
-
-    let nc = NotificationCenter.default
-    _ = nc.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: nil, using: catchNotification)
-
-    UIApplication.shared.isNetworkActivityIndicatorVisible = true
-
-    let filters = ["text": "titan"]
-
+    
     do {
       try PhoenixCore.getCollection(ofType: dataType, withFilters: filters) { searchResult in
         if let result = searchResult {
           DispatchQueue.main.async {
-            self.items = (result.list as! [Anime])
-            self.latestNextLink = result.pagingLinks.next
-            self.tableView.reloadData()
-            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            self.items.append(contentsOf: result.data)
+            super.addResultToItems(result)
           }
         }
       }
@@ -43,13 +34,9 @@ class AnimeTableViewController: UITableViewController {
     }
   }
 
-  private func catchNotification(notification: Notification) {
-    self.tableView.reloadData()
-  }
-
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if let detailcontroller = segue.destination as? AnimeDetailController {
-      detailcontroller.anime = items[self.tableView.indexPathForSelectedRow!.row]
+    if let detailcontroller = segue.destination as? AnimeDetailViewController {
+      detailcontroller.mediaItem = items[self.tableView.indexPathForSelectedRow!.row]
     }
   }
 
@@ -62,11 +49,7 @@ class AnimeTableViewController: UITableViewController {
 
     let anime = items[indexPath.row]
 
-    var titleLanguageEnum = TitleLanguageIdentifierEnum.canonical
-
-    if let titleLanguagePreferenceString = UserDefaults.standard.string(forKey: "display_language_preference") {
-      titleLanguageEnum = TitleLanguageIdentifierEnum(rawValue: titleLanguagePreferenceString)!
-    }
+    let titleLanguageEnum = getTitleLanguageEnum()
 
     cell.textLabel?.text = anime.getTitleWith(identifier: titleLanguageEnum)
     cell.detailTextLabel?.text = anime.attributes?.slug
@@ -89,12 +72,8 @@ class AnimeTableViewController: UITableViewController {
         try PhoenixCore.getCollection(ofType: dataType, byURL: next) { searchResult in
           if let result = searchResult {
             DispatchQueue.main.async {
-              if self.latestNextLink != result.pagingLinks.next {
-                self.latestNextLink = result.pagingLinks.next
-                self.items.append(contentsOf: (result.list as! [Anime]))
-                self.tableView.reloadData()
-              }
-              UIApplication.shared.isNetworkActivityIndicatorVisible = false
+              self.items.append(contentsOf: result.data)
+              super.addResultToItems(result)
             }
           }
         }

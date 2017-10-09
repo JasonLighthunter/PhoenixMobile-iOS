@@ -9,13 +9,7 @@
 import UIKit
 import PhoenixCoreSwift
 
-class MangaDetailViewController: UIViewController {
-  @IBOutlet weak var titleLabel: UILabel!
-  @IBOutlet weak var synopsisLabel: UILabel!
-  @IBOutlet weak var posterImageView: UIImageView!
-
-  var manga: Manga?
-
+class MangaDetailViewController: PhoenixDetailViewController {
   override func viewDidLoad() {
     let nc = NotificationCenter.default
     _ = nc.addObserver(forName:UserDefaults.didChangeNotification, object: nil, queue: nil, using: catchNotification)
@@ -27,11 +21,13 @@ class MangaDetailViewController: UIViewController {
       titleLanguageEnum = TitleLanguageIdentifierEnum(rawValue: titleLanguage)!
     }
 
-    titleLabel.text = manga?.getTitleWith(identifier: titleLanguageEnum)
+    titleLabel.text = mediaItem?.getTitleWith(identifier: titleLanguageEnum)
 
     UIApplication.shared.isNetworkActivityIndicatorVisible = true
 
-    ImageFetcher.getFrom(URL(string: (manga?.attributes?.posterImage?.small)!)!) { imageResult, _ in
+    let attributes = (self.mediaItem as? Manga)?.attributes
+
+    ImageFetcher.getFrom(URL(string: (attributes?.posterImage?.small)!)!) { imageResult in
       if let image = imageResult {
         DispatchQueue.main.async {
           self.posterImageView.image = image
@@ -40,17 +36,6 @@ class MangaDetailViewController: UIViewController {
       }
     }
 
-    synopsisLabel.text = manga?.attributes?.synopsis
-  }
-
-  private func catchNotification(notification: Notification) {
-    let key = "display_language_preference"
-    var titleLanguageEnum: TitleLanguageIdentifierEnum = TitleLanguageIdentifierEnum.canonical
-
-    if let titleLanguage: String = UserDefaults.standard.string(forKey: key) {
-      titleLanguageEnum = TitleLanguageIdentifierEnum(rawValue: titleLanguage)!
-    }
-
-    titleLabel.text = manga?.getTitleWith(identifier: titleLanguageEnum)
+    synopsisLabel.text = attributes?.synopsis
   }
 }
