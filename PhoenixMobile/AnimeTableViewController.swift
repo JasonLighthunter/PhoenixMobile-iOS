@@ -20,12 +20,7 @@ class AnimeTableViewController: PhoenixTableViewController {
     
     do {
       try PhoenixCore.getCollection(ofType: dataType, withFilters: filters) { searchResult in
-        if let result = searchResult {
-          DispatchQueue.main.async {
-            self.items.append(contentsOf: result.data)
-            super.addResultToItems(result)
-          }
-        }
+        self.handleResult(searchResult)
       }
     } catch PhoenixError.invalidURL(let reason, _){
       print(reason)
@@ -72,8 +67,10 @@ class AnimeTableViewController: PhoenixTableViewController {
         try PhoenixCore.getCollection(ofType: dataType, byURL: next) { searchResult in
           self.handleResult(searchResult)
         }
+      } catch PhoenixError.invalidURL(let reason, _){
+        print(reason)
       } catch {
-        print(error.localizedDescription) //TODO: handle error
+        print(error.localizedDescription)
       }
     }
   }
