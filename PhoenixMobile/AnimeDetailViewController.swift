@@ -22,18 +22,12 @@ class AnimeDetailViewController: PhoenixDetailViewController {
 
     titleLabel.text = mediaItem?.getTitleWith(identifier: titleLanguageEnum)
 
-    let attributes = (self.mediaItem as? Anime)?.attributes
-
     UIApplication.shared.isNetworkActivityIndicatorVisible = true
 
-    ImageFetcher.getFrom(URL(string: (attributes?.posterImage?.small)!)!) { imageResult in
-      if let image = imageResult {
-        DispatchQueue.main.async {
-          self.posterImageView.image = image
-          UIApplication.shared.isNetworkActivityIndicatorVisible = false
-        }
-      }
-    }
+    let attributes = (self.mediaItem as? Anime)?.attributes
+    if let imageURLString = attributes?.posterImage?.small {
+      fetchImage(fromURLString: imageURLString)
+    } //TODO: PlaceholderImage
 
     synopsisLabel.text = attributes?.synopsis
   }

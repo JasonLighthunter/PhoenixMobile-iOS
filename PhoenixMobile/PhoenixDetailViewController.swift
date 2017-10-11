@@ -55,4 +55,15 @@ class PhoenixDetailViewController: UIViewController {
 
     titleLabel.text = mediaItem?.getTitleWith(identifier: titleLanguageEnum)
   }
+
+  internal func fetchImage(fromURLString urlString: String) {
+    ImageFetcher.getFrom(URL(string: urlString)!) { imageResult in
+      if let image = imageResult {
+        DispatchQueue.main.async {
+          self.posterImageView.image = image
+          UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        }
+      }
+    }
+  }
 }

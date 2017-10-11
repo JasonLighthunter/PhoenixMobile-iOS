@@ -26,15 +26,9 @@ class MangaDetailViewController: PhoenixDetailViewController {
     UIApplication.shared.isNetworkActivityIndicatorVisible = true
 
     let attributes = (self.mediaItem as? Manga)?.attributes
-
-    ImageFetcher.getFrom(URL(string: (attributes?.posterImage?.small)!)!) { imageResult in
-      if let image = imageResult {
-        DispatchQueue.main.async {
-          self.posterImageView.image = image
-          UIApplication.shared.isNetworkActivityIndicatorVisible = false
-        }
-      }
-    }
+    if let imageURLString = attributes?.posterImage?.small {
+      fetchImage(fromURLString: imageURLString)
+    } //TODO: PlaceholderImage
 
     synopsisLabel.text = attributes?.synopsis
   }
