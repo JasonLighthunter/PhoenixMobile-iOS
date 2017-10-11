@@ -70,15 +70,19 @@ class AnimeTableViewController: PhoenixTableViewController {
       //only prevents adding to list not firing request.
       do {
         try PhoenixCore.getCollection(ofType: dataType, byURL: next) { searchResult in
-          if let result = searchResult {
-            DispatchQueue.main.async {
-              self.items.append(contentsOf: result.data)
-              super.addResultToItems(result)
-            }
-          }
+          self.handleResult(searchResult)
         }
       } catch {
         print(error.localizedDescription) //TODO: handle error
+      }
+    }
+  }
+
+  private func handleResult(_ searchResult: KitsuSearchResult<Anime>?) {
+    if let result = searchResult {
+      DispatchQueue.main.async {
+        self.items.append(contentsOf: result.data)
+        super.addResultToItems(result)
       }
     }
   }
