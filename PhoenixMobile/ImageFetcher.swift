@@ -8,7 +8,7 @@
 import UIKit
 
 class ImageFetcher {
-  static let imageFetcherSyncQueue = DispatchQueue(label: "nl.phoenixMobile.imageFetcher")
+  static let imageFetcherSyncQueue = DispatchQueue(label: "nl.jobcuppen.phoenixMobile.imageFetcher")
 
   class func getFrom(_ url: URL, callback: @escaping (UIImage?) -> Void) {
     imageFetcherSyncQueue.async {

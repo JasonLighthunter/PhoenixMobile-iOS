@@ -1,5 +1,5 @@
 //
-//  PhoenixDetailView.swift
+//  PhoenixDetailViewController.swift
 //  PhoenixMobile
 //
 //  Created by Job Cuppen on 09/10/2017.
@@ -21,6 +21,12 @@ class PhoenixDetailViewController: UIViewController {
   var mediaItem: KitsuMediaObject?
 
   override func viewDidLoad() {
+    super.viewDidLoad()
+
+    if #available(iOS 11.0, *) {
+      navigationController?.navigationBar.prefersLargeTitles = false
+    }
+
     let nc = NotificationCenter.default
     _ = nc.addObserver(forName:UserDefaults.didChangeNotification, object: nil, queue: nil, using: catchNotification)
 

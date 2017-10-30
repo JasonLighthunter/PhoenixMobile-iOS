@@ -1,5 +1,5 @@
 //
-//  DetailController.swift
+//  AnimeDetailViewController.swift
 //  PhoenixMobile
 //
 //  Created by Job Cuppen on 14/02/2017.

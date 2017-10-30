@@ -17,6 +17,10 @@ class PhoenixTableViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    if #available(iOS 11.0, *) {
+      navigationController?.navigationBar.prefersLargeTitles = true
+    }
+
     let nc = NotificationCenter.default
     _ = nc.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: nil, using: catchNotification)
 

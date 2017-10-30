@@ -16,6 +16,11 @@
 		7C48DB841EE6A0A000BD69C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C48DB801EE6A0A000BD69C8 /* LaunchScreen.storyboard */; };
 		7C48DB851EE6A0A000BD69C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C48DB821EE6A0A000BD69C8 /* Main.storyboard */; };
 		7C48DB861EE6A0D300BD69C8 /* PhoenixCoreSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C48DB7F1EE6A01C00BD69C8 /* PhoenixCoreSwift.framework */; };
+		7C4FC4F51FA0E10600BEAA7D /* NetworkingUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4FC4F41FA0E10600BEAA7D /* NetworkingUtil.swift */; };
+		7C4FC4FA1FA0E1D800BEAA7D /* TokenRequestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4FC4F91FA0E1D800BEAA7D /* TokenRequestResult.swift */; };
+		7C5BD8F21F98E66A0035B849 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5BD8EE1F98E66A0035B849 /* KeychainPasswordItem.swift */; };
+		7C6FD9011F8E67B200D576A9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6FD9001F8E67B200D576A9 /* LoginViewController.swift */; };
+		7C6FD9061F8E688100D576A9 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6FD9051F8E688100D576A9 /* UserViewController.swift */; };
 		7C8329441F8BF80700BD4B6E /* PhoenixTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8329431F8BF80700BD4B6E /* PhoenixTableViewController.swift */; };
 		7C8329491F8BF87D00BD4B6E /* PhoenixDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8329481F8BF87D00BD4B6E /* PhoenixDetailViewController.swift */; };
 		7CAFD7D91EF95D9C0028768D /* MangaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAFD7D81EF95D9C0028768D /* MangaTableViewController.swift */; };
@@ -71,6 +76,11 @@
 		7C48DB811EE6A0A000BD69C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = PhoenixMobile/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		7C48DB831EE6A0A000BD69C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = PhoenixMobile/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		7C48DB8A1EE6A15700BD69C8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = PhoenixMobile/Info.plist; sourceTree = SOURCE_ROOT; };
+		7C4FC4F41FA0E10600BEAA7D /* NetworkingUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkingUtil.swift; path = PhoenixMobile/NetworkingUtil.swift; sourceTree = SOURCE_ROOT; };
+		7C4FC4F91FA0E1D800BEAA7D /* TokenRequestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TokenRequestResult.swift; path = PhoenixMobile/TokenRequestResult.swift; sourceTree = SOURCE_ROOT; };
+		7C5BD8EE1F98E66A0035B849 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeychainPasswordItem.swift; path = PhoenixMobile/KeychainPasswordItem.swift; sourceTree = SOURCE_ROOT; };
+		7C6FD9001F8E67B200D576A9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = PhoenixMobile/LoginViewController.swift; sourceTree = SOURCE_ROOT; };
+		7C6FD9051F8E688100D576A9 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserViewController.swift; path = PhoenixMobile/UserViewController.swift; sourceTree = SOURCE_ROOT; };
 		7C8329431F8BF80700BD4B6E /* PhoenixTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhoenixTableViewController.swift; path = PhoenixMobile/PhoenixTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		7C8329481F8BF87D00BD4B6E /* PhoenixDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhoenixDetailViewController.swift; path = PhoenixMobile/PhoenixDetailViewController.swift; sourceTree = SOURCE_ROOT; };
 		7CAFD7D81EF95D9C0028768D /* MangaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MangaTableViewController.swift; path = PhoenixMobile/MangaTableViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -110,6 +120,7 @@
 		7C19A88E1E534EB800AF0590 /* PhoenixMobile */ = {
 			isa = PBXGroup;
 			children = (
+				7C5BD8EE1F98E66A0035B849 /* KeychainPasswordItem.swift */,
 				7C48DB8A1EE6A15700BD69C8 /* Info.plist */,
 				7C48DB801EE6A0A000BD69C8 /* LaunchScreen.storyboard */,
 				7C48DB821EE6A0A000BD69C8 /* Main.storyboard */,
@@ -122,6 +133,10 @@
 				7C03B8511F86B3380023C0AB /* MangaDetailViewController.swift */,
 				7C8329431F8BF80700BD4B6E /* PhoenixTableViewController.swift */,
 				7C8329481F8BF87D00BD4B6E /* PhoenixDetailViewController.swift */,
+				7C6FD9001F8E67B200D576A9 /* LoginViewController.swift */,
+				7C6FD9051F8E688100D576A9 /* UserViewController.swift */,
+				7C4FC4F41FA0E10600BEAA7D /* NetworkingUtil.swift */,
+				7C4FC4F91FA0E1D800BEAA7D /* TokenRequestResult.swift */,
 			);
 			name = PhoenixMobile;
 			path = TestPhoenixMobile;
@@ -242,14 +257,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C6FD9011F8E67B200D576A9 /* LoginViewController.swift in Sources */,
+				7C6FD9061F8E688100D576A9 /* UserViewController.swift in Sources */,
 				7C48DB741EE69FE300BD69C8 /* AnimeTableViewController.swift in Sources */,
 				7C8329441F8BF80700BD4B6E /* PhoenixTableViewController.swift in Sources */,
+				7C4FC4FA1FA0E1D800BEAA7D /* TokenRequestResult.swift in Sources */,
 				7CAFD7D91EF95D9C0028768D /* MangaTableViewController.swift in Sources */,
 				7C8329491F8BF87D00BD4B6E /* PhoenixDetailViewController.swift in Sources */,
 				7C48DB721EE69FE300BD69C8 /* ImageFetcher.swift in Sources */,
 				7C48DB711EE69FE300BD69C8 /* AnimeDetailViewController.swift in Sources */,
 				7C03B8521F86B3380023C0AB /* MangaDetailViewController.swift in Sources */,
+				7C4FC4F51FA0E10600BEAA7D /* NetworkingUtil.swift in Sources */,
 				7C48DB681EE69FBE00BD69C8 /* AppDelegate.swift in Sources */,
+				7C5BD8F21F98E66A0035B849 /* KeychainPasswordItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

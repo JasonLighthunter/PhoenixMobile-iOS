@@ -1,5 +1,5 @@
 //
-//  TableViewController.swift
+//  AnimeTableViewController.swift
 //  PhoenixMobile
 //
 //  Created by Job Cuppen on 10/03/2017.
