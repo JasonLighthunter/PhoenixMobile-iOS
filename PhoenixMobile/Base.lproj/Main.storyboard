@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -260,12 +260,13 @@
                     </tabBar>
                     <connections>
                         <segue destination="cDd-aD-UcI" kind="relationship" relationship="viewControllers" id="fFs-yc-pTc"/>
-                        <segue destination="xuH-Ut-SmT" kind="relationship" relationship="viewControllers" id="V7h-0d-ECC"/>
+                        <segue destination="vut-Sp-u7B" kind="relationship" relationship="viewControllers" id="fUi-Yc-Apz"/>
+                        <segue destination="xuH-Ut-SmT" kind="relationship" relationship="viewControllers" id="y8i-rh-7mS"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="27b-bT-93u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3154" y="-513"/>
+            <point key="canvasLocation" x="-3354" y="-52"/>
         </scene>
         <!--Anime-->
         <scene sceneID="Gtf-QD-MQ9">
@@ -284,9 +285,114 @@
             </objects>
             <point key="canvasLocation" x="-2235" y="-51"/>
         </scene>
+        <!--User-->
+        <scene sceneID="LWs-8c-g03">
+            <objects>
+                <navigationController id="vut-Sp-u7B" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="User" image="User" id="Emn-Cz-rTu"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="78W-gj-BJC">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="6SH-ok-J2n" kind="relationship" relationship="rootViewController" id="1WX-Q8-IA0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ow3-ln-EMT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2236" y="752"/>
+        </scene>
+        <!--User View Controller-->
+        <scene sceneID="z6b-hO-3Il">
+            <objects>
+                <viewController id="6SH-ok-J2n" customClass="UserViewController" customModule="PhoenixMobile" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CEX-UQ-V2x"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vqc-ZD-f3l"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7GK-y8-CON">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to your Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LYB-6Y-ZAQ">
+                                <rect key="frame" x="96" y="323" width="182" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Vjt-6y-Gp5"/>
+                    <connections>
+                        <segue destination="jho-Pd-xpY" kind="presentation" identifier="loginView" id="t8T-0K-alS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CjP-oo-Dh0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1442" y="752"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="cGB-DE-9Eo">
+            <objects>
+                <viewController id="jho-Pd-xpY" customClass="LoginViewController" customModule="PhoenixMobile" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YvW-c9-UMk"/>
+                        <viewControllerLayoutGuide type="bottom" id="5pT-98-Xov"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6YF-jn-ggw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This is a Login screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfz-oV-Rx0">
+                                <rect key="frame" x="105" y="246" width="165" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="apt-3m-WS1">
+                                <rect key="frame" x="139" y="275" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="92a-Q0-Oz0">
+                                <rect key="frame" x="139" y="313" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="er1-Aq-un8">
+                                <rect key="frame" x="168" y="366" width="38" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginAction:" destination="jho-Pd-xpY" eventType="touchUpInside" id="Lzd-DO-LUV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <connections>
+                        <outlet property="loginButton" destination="er1-Aq-un8" id="dn6-zV-9eH"/>
+                        <outlet property="passwordTextField" destination="92a-Q0-Oz0" id="rqU-hx-Og4"/>
+                        <outlet property="usernameTextField" destination="apt-3m-WS1" id="6z6-KR-Thn"/>
+                        <segue destination="UnA-07-4xk" kind="unwind" identifier="dismissLogin" unwindAction="unwindSegue:" id="qwN-aS-f8K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FAI-lw-TIG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="UnA-07-4xk" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-1442" y="1536"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Anime" width="25" height="25"/>
         <image name="Manga" width="25" height="25"/>
+        <image name="User" width="25" height="25"/>
     </resources>
 </document>
