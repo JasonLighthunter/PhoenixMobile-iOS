@@ -1,11 +1,10 @@
 import UIKit
-import PhoenixCoreSwift
 import PhoenixKitsuCore
 import PhoenixKitsuMedia
 
-class PhoenixTableViewController<T : KitsuObject>: UITableViewController {
+class PhoenixTableViewController<T : KitsuMediaObject>: UITableViewController {
+  internal var filters: [String : String] = [:]
   internal var items: [T] = []
-
   internal var latestNextLink: String?
 
   override func viewDidLoad() {
@@ -15,6 +14,25 @@ class PhoenixTableViewController<T : KitsuObject>: UITableViewController {
     _ = nc.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: nil, using: catchNotification)
 
     UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    
+    do {
+      try PhoenixCore.getCollection(withFilters: filters) { (searchResult: SearchResult<T>?) in
+        if let result = searchResult {
+          DispatchQueue.main.async {
+            self.items.append(contentsOf: result.data ?? [])
+            self.addResultToItems(result)
+          }
+        }
+      }
+    } catch {
+      print(error.localizedDescription)
+    }
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let detailcontroller = segue.destination as? PhoenixDetailViewController<T> {
+      detailcontroller.mediaItem = items[self.tableView.indexPathForSelectedRow!.row]
+    }
   }
 
   private func catchNotification(notification: Notification) {
@@ -38,6 +56,19 @@ class PhoenixTableViewController<T : KitsuObject>: UITableViewController {
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return items.count
+  }
+  
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
+    
+    let item = items[indexPath.row]
+    
+    let titleLanguageEnum = getTitleLanguageEnum()
+    
+    cell.textLabel?.text = item.getTitleWith(identifier: titleLanguageEnum)
+    cell.detailTextLabel?.text = item.attributes?.slug
+    
+    return cell
   }
   
   override func scrollViewDidScroll(_ scrollView: UIScrollView) {
