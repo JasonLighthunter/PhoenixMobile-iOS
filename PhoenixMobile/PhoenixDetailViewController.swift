@@ -22,7 +22,7 @@ class PhoenixDetailViewController<T: KitsuMediaObject>: UIViewController {
     
     titleLabel.text = mediaItem?.getTitleWith(identifier: titleLanguageEnum)
     
-    let attributes = (self.mediaItem)?.attributes
+    let attributes = mediaItem?.attributes
     
     UIApplication.shared.isNetworkActivityIndicatorVisible = true
     
