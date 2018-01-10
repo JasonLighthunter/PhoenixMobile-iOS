@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  PhoenixMobile
-//
-//  Created by Job Cuppen on 14/02/2017.
-//  Copyright © 2017 Job Cuppen. All rights reserved.
-
 import UIKit
 
 @UIApplicationMain
