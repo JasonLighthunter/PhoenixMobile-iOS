@@ -1,17 +1,11 @@
-//
-//  PhoenixTableViewController.swift
-//  PhoenixMobile
-//
-//  Created by Job Cuppen on 09/10/2017.
-//  Copyright © 2017 Job Cuppen. All rights reserved.
-//
-
-import Foundation
-
 import UIKit
 import PhoenixCoreSwift
+import PhoenixKitsuCore
+import PhoenixKitsuMedia
 
-class PhoenixTableViewController: UITableViewController {
+class PhoenixTableViewController<T : KitsuObject>: UITableViewController {
+  internal var items: [T] = []
+
   internal var latestNextLink: String?
 
   override func viewDidLoad() {
@@ -27,7 +21,7 @@ class PhoenixTableViewController: UITableViewController {
     self.tableView.reloadData()
   }
 
-  internal func addResultToItems<T>(_ result: KitsuSearchResult<T>) {
+  internal func addResultToItems(_ result: SearchResult<T>) {
     if self.latestNextLink != result.pagingLinks?.next {
       self.latestNextLink = result.pagingLinks?.next
       self.tableView.reloadData()
@@ -40,5 +34,36 @@ class PhoenixTableViewController: UITableViewController {
       return TitleLanguageIdentifierEnum.canonical
     }
     return TitleLanguageIdentifierEnum(rawValue: titleLanguagePreferenceString)!
+  }
+  
+  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return items.count
+  }
+  
+  override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    let offsetY = scrollView.contentOffset.y
+    let contentHeight = scrollView.contentSize.height
+    let frameHeight = scrollView.frame.size.height
+    let doingRequest = UIApplication.shared.isNetworkActivityIndicatorVisible
+    
+    if offsetY > contentHeight - frameHeight, doingRequest == false, let next = latestNextLink {
+      
+      UIApplication.shared.isNetworkActivityIndicatorVisible = true
+      
+      //only prevents adding to list not firing request.
+      do {
+        try PhoenixCore.getCollection(byURL: next) { (searchResult : SearchResult<T>?) in
+          if let result = searchResult {
+            DispatchQueue.main.async {
+              //if(result.data == nil) { print(next);}
+              self.items.append(contentsOf: result.data ?? [])
+              self.addResultToItems(result)
+            }
+          }
+        }
+      } catch {
+        print(error.localizedDescription) //TODO: handle error
+      }
+    }
   }
 }

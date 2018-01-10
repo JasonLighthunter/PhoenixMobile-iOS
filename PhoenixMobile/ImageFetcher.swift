@@ -1,10 +1,3 @@
-//
-//  ImageFetcher.swift
-//  PhoenixMobile
-//
-//  Created by Job Cuppen on 22/03/2017.
-//  Copyright © 2017 Job Cuppen. All rights reserved.
-
 import UIKit
 
 class ImageFetcher {
