@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" textLabel="Eqz-SF-bnV" detailTextLabel="Tld-m6-Bq7" style="IBUITableViewCellStyleSubtitle" id="VVo-Ww-v7f">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AnimeCell" textLabel="Eqz-SF-bnV" detailTextLabel="Tld-m6-Bq7" style="IBUITableViewCellStyleSubtitle" id="VVo-Ww-v7f">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VVo-Ww-v7f" id="gzj-BK-75m">
@@ -119,7 +119,7 @@
             </objects>
             <point key="canvasLocation" x="-606" y="-51"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Manga Table View Controller-->
         <scene sceneID="c12-e4-7S6">
             <objects>
                 <tableViewController id="TsS-mB-aPd" customClass="MangaTableViewController" customModule="PhoenixMobile" sceneMemberID="viewController">
@@ -161,7 +161,7 @@
                             <outlet property="delegate" destination="TsS-mB-aPd" id="R1e-nn-TkL"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="kq9-2H-u6n"/>
+                    <navigationItem key="navigationItem" title="Manga Table View Controller" id="kq9-2H-u6n"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S4H-iK-E9U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

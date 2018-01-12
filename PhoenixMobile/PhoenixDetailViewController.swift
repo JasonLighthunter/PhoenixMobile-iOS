@@ -1,8 +1,8 @@
 import UIKit
 import PhoenixKitsuMedia
+import Requestable
 
-
-class PhoenixDetailViewController<T: KitsuMediaObject>: UIViewController {
+class PhoenixDetailViewController<T: HasMediaObjectAttributes & Requestable>: UIViewController {
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var synopsisLabel: UILabel!
   @IBOutlet weak var posterImageView: UIImageView!
@@ -13,14 +13,7 @@ class PhoenixDetailViewController<T: KitsuMediaObject>: UIViewController {
     let nc = NotificationCenter.default
     _ = nc.addObserver(forName:UserDefaults.didChangeNotification, object: nil, queue: nil, using: catchNotification)
     
-    let key = "display_language_preference"
-    var titleLanguageEnum: TitleLanguageIdentifierEnum = TitleLanguageIdentifierEnum.canonical
-    
-    if let titleLanguage: String = UserDefaults.standard.string(forKey: key) {
-      titleLanguageEnum = TitleLanguageIdentifierEnum(rawValue: titleLanguage)!
-    }
-    
-    titleLabel.text = mediaItem?.getTitleWith(identifier: titleLanguageEnum)
+    self.setTitle()
     
     let attributes = mediaItem?.attributes
     
@@ -37,14 +30,19 @@ class PhoenixDetailViewController<T: KitsuMediaObject>: UIViewController {
     
     synopsisLabel.text = attributes?.synopsis
   }
+  
   internal func catchNotification(notification: Notification) {
+    self.setTitle()
+  }
+  
+  private func setTitle() {
     let key = "display_language_preference"
     var titleLanguageEnum: TitleLanguageIdentifierEnum = TitleLanguageIdentifierEnum.canonical
-
+    
     if let titleLanguage: String = UserDefaults.standard.string(forKey: key) {
       titleLanguageEnum = TitleLanguageIdentifierEnum(rawValue: titleLanguage)!
     }
-
+    
     titleLabel.text = mediaItem?.getTitleWith(identifier: titleLanguageEnum)
   }
 }

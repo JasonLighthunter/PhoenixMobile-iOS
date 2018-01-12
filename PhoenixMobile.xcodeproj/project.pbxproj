@@ -15,71 +15,71 @@
 		7C48DB741EE69FE300BD69C8 /* AnimeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C48DB6E1EE69FE300BD69C8 /* AnimeTableViewController.swift */; };
 		7C48DB841EE6A0A000BD69C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C48DB801EE6A0A000BD69C8 /* LaunchScreen.storyboard */; };
 		7C48DB851EE6A0A000BD69C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C48DB821EE6A0A000BD69C8 /* Main.storyboard */; };
-		7C646D052006B7BC0046FC60 /* PhoenixKitsuMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C646CFE2006B7B20046FC60 /* PhoenixKitsuMedia.framework */; };
-		7C646D062006B7BC0046FC60 /* PhoenixKitsuMedia.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7C646CFE2006B7B20046FC60 /* PhoenixKitsuMedia.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7C646D092006B7BC0046FC60 /* PhoenixKitsuCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C646D002006B7B20046FC60 /* PhoenixKitsuCore.framework */; };
-		7C646D0A2006B7BC0046FC60 /* PhoenixKitsuCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7C646D002006B7B20046FC60 /* PhoenixKitsuCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7C646D0D2006B7BC0046FC60 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C646D022006B7B20046FC60 /* Alamofire.framework */; };
-		7C646D0E2006B7BC0046FC60 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7C646D022006B7B20046FC60 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7C8329441F8BF80700BD4B6E /* PhoenixTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8329431F8BF80700BD4B6E /* PhoenixTableViewController.swift */; };
 		7C8329491F8BF87D00BD4B6E /* PhoenixDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8329481F8BF87D00BD4B6E /* PhoenixDetailViewController.swift */; };
 		7CAFD7D91EF95D9C0028768D /* MangaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAFD7D81EF95D9C0028768D /* MangaTableViewController.swift */; };
+		7CC3225B2007E7D900D689EE /* PhoenixKitsuMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC322542007E7D300D689EE /* PhoenixKitsuMedia.framework */; };
+		7CC3225C2007E7D900D689EE /* PhoenixKitsuMedia.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC322542007E7D300D689EE /* PhoenixKitsuMedia.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7CC3225F2007E7D900D689EE /* PhoenixKitsuCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC322562007E7D300D689EE /* PhoenixKitsuCore.framework */; };
+		7CC322602007E7D900D689EE /* PhoenixKitsuCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC322562007E7D300D689EE /* PhoenixKitsuCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7CC322632007E7D900D689EE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC322582007E7D300D689EE /* Alamofire.framework */; };
+		7CC322642007E7D900D689EE /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC322582007E7D300D689EE /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7CE8333E1E9B91770058BF41 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7CE8333D1E9B91770058BF41 /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		7C646CFB2006B7B20046FC60 /* PBXContainerItemProxy */ = {
+		7CC322512007E7D300D689EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 7C646CEE2006B7B20046FC60 /* PhoenixKitsuMedia.xcodeproj */;
+			containerPortal = 7CC322442007E7D300D689EE /* PhoenixKitsuMedia.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = "PhoenixKitsuMedia::PhoenixKitsuMediaTests::Product";
 			remoteInfo = PhoenixKitsuMediaTests;
 		};
-		7C646CFD2006B7B20046FC60 /* PBXContainerItemProxy */ = {
+		7CC322532007E7D300D689EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 7C646CEE2006B7B20046FC60 /* PhoenixKitsuMedia.xcodeproj */;
+			containerPortal = 7CC322442007E7D300D689EE /* PhoenixKitsuMedia.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = "PhoenixKitsuMedia::PhoenixKitsuMedia::Product";
 			remoteInfo = PhoenixKitsuMedia;
 		};
-		7C646CFF2006B7B20046FC60 /* PBXContainerItemProxy */ = {
+		7CC322552007E7D300D689EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 7C646CEE2006B7B20046FC60 /* PhoenixKitsuMedia.xcodeproj */;
+			containerPortal = 7CC322442007E7D300D689EE /* PhoenixKitsuMedia.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = "PhoenixKitsuCore::PhoenixKitsuCore::Product";
 			remoteInfo = PhoenixKitsuCore;
 		};
-		7C646D012006B7B20046FC60 /* PBXContainerItemProxy */ = {
+		7CC322572007E7D300D689EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 7C646CEE2006B7B20046FC60 /* PhoenixKitsuMedia.xcodeproj */;
+			containerPortal = 7CC322442007E7D300D689EE /* PhoenixKitsuMedia.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = "Alamofire::Alamofire::Product";
 			remoteInfo = Alamofire;
 		};
-		7C646D032006B7B20046FC60 /* PBXContainerItemProxy */ = {
+		7CC322592007E7D300D689EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 7C646CEE2006B7B20046FC60 /* PhoenixKitsuMedia.xcodeproj */;
+			containerPortal = 7CC322442007E7D300D689EE /* PhoenixKitsuMedia.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = "Requestable::Requestable::Product";
 			remoteInfo = Requestable;
 		};
-		7C646D072006B7BC0046FC60 /* PBXContainerItemProxy */ = {
+		7CC3225D2007E7D900D689EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 7C646CEE2006B7B20046FC60 /* PhoenixKitsuMedia.xcodeproj */;
+			containerPortal = 7CC322442007E7D300D689EE /* PhoenixKitsuMedia.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = "PhoenixKitsuMedia::PhoenixKitsuMedia";
 			remoteInfo = PhoenixKitsuMedia;
 		};
-		7C646D0B2006B7BC0046FC60 /* PBXContainerItemProxy */ = {
+		7CC322612007E7D900D689EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 7C646CEE2006B7B20046FC60 /* PhoenixKitsuMedia.xcodeproj */;
+			containerPortal = 7CC322442007E7D300D689EE /* PhoenixKitsuMedia.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = "PhoenixKitsuCore::PhoenixKitsuCore";
 			remoteInfo = PhoenixKitsuCore;
 		};
-		7C646D0F2006B7BC0046FC60 /* PBXContainerItemProxy */ = {
+		7CC322652007E7D900D689EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 7C646CEE2006B7B20046FC60 /* PhoenixKitsuMedia.xcodeproj */;
+			containerPortal = 7CC322442007E7D300D689EE /* PhoenixKitsuMedia.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = "Alamofire::Alamofire";
 			remoteInfo = Alamofire;
@@ -93,9 +93,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7C646D0A2006B7BC0046FC60 /* PhoenixKitsuCore.framework in Embed Frameworks */,
-				7C646D0E2006B7BC0046FC60 /* Alamofire.framework in Embed Frameworks */,
-				7C646D062006B7BC0046FC60 /* PhoenixKitsuMedia.framework in Embed Frameworks */,
+				7CC322602007E7D900D689EE /* PhoenixKitsuCore.framework in Embed Frameworks */,
+				7CC322642007E7D900D689EE /* Alamofire.framework in Embed Frameworks */,
+				7CC3225C2007E7D900D689EE /* PhoenixKitsuMedia.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -113,10 +113,10 @@
 		7C48DB811EE6A0A000BD69C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = PhoenixMobile/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		7C48DB831EE6A0A000BD69C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = PhoenixMobile/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		7C48DB8A1EE6A15700BD69C8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = PhoenixMobile/Info.plist; sourceTree = SOURCE_ROOT; };
-		7C646CEE2006B7B20046FC60 /* PhoenixKitsuMedia.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PhoenixKitsuMedia.xcodeproj; path = "../Phoenix-Kitsu-Media/PhoenixKitsuMedia.xcodeproj"; sourceTree = "<group>"; };
 		7C8329431F8BF80700BD4B6E /* PhoenixTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhoenixTableViewController.swift; path = PhoenixMobile/PhoenixTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		7C8329481F8BF87D00BD4B6E /* PhoenixDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhoenixDetailViewController.swift; path = PhoenixMobile/PhoenixDetailViewController.swift; sourceTree = SOURCE_ROOT; };
 		7CAFD7D81EF95D9C0028768D /* MangaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MangaTableViewController.swift; path = PhoenixMobile/MangaTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		7CC322442007E7D300D689EE /* PhoenixKitsuMedia.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PhoenixKitsuMedia.xcodeproj; path = "../Phoenix-Kitsu-Media/PhoenixKitsuMedia.xcodeproj"; sourceTree = "<group>"; };
 		7CE8333D1E9B91770058BF41 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,9 +125,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C646D092006B7BC0046FC60 /* PhoenixKitsuCore.framework in Frameworks */,
-				7C646D0D2006B7BC0046FC60 /* Alamofire.framework in Frameworks */,
-				7C646D052006B7BC0046FC60 /* PhoenixKitsuMedia.framework in Frameworks */,
+				7CC3225F2007E7D900D689EE /* PhoenixKitsuCore.framework in Frameworks */,
+				7CC322632007E7D900D689EE /* Alamofire.framework in Frameworks */,
+				7CC3225B2007E7D900D689EE /* PhoenixKitsuMedia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +137,7 @@
 		7C19A8831E534EB800AF0590 = {
 			isa = PBXGroup;
 			children = (
-				7C646CEE2006B7B20046FC60 /* PhoenixKitsuMedia.xcodeproj */,
+				7CC322442007E7D300D689EE /* PhoenixKitsuMedia.xcodeproj */,
 				7CE8333D1E9B91770058BF41 /* Settings.bundle */,
 				7C19A88E1E534EB800AF0590 /* PhoenixMobile */,
 				7C19A88D1E534EB800AF0590 /* Products */,
@@ -172,14 +172,14 @@
 			path = TestPhoenixMobile;
 			sourceTree = "<group>";
 		};
-		7C646CEF2006B7B20046FC60 /* Products */ = {
+		7CC322452007E7D300D689EE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7C646CFC2006B7B20046FC60 /* PhoenixKitsuMediaTests.xctest */,
-				7C646CFE2006B7B20046FC60 /* PhoenixKitsuMedia.framework */,
-				7C646D002006B7B20046FC60 /* PhoenixKitsuCore.framework */,
-				7C646D022006B7B20046FC60 /* Alamofire.framework */,
-				7C646D042006B7B20046FC60 /* Requestable.framework */,
+				7CC322522007E7D300D689EE /* PhoenixKitsuMediaTests.xctest */,
+				7CC322542007E7D300D689EE /* PhoenixKitsuMedia.framework */,
+				7CC322562007E7D300D689EE /* PhoenixKitsuCore.framework */,
+				7CC322582007E7D300D689EE /* Alamofire.framework */,
+				7CC3225A2007E7D300D689EE /* Requestable.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -199,9 +199,9 @@
 			buildRules = (
 			);
 			dependencies = (
-				7C646D082006B7BC0046FC60 /* PBXTargetDependency */,
-				7C646D0C2006B7BC0046FC60 /* PBXTargetDependency */,
-				7C646D102006B7BC0046FC60 /* PBXTargetDependency */,
+				7CC3225E2007E7D900D689EE /* PBXTargetDependency */,
+				7CC322622007E7D900D689EE /* PBXTargetDependency */,
+				7CC322662007E7D900D689EE /* PBXTargetDependency */,
 			);
 			name = PhoenixMobile;
 			productName = TestPhoenixMobile;
@@ -238,8 +238,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 7C646CEF2006B7B20046FC60 /* Products */;
-					ProjectRef = 7C646CEE2006B7B20046FC60 /* PhoenixKitsuMedia.xcodeproj */;
+					ProductGroup = 7CC322452007E7D300D689EE /* Products */;
+					ProjectRef = 7CC322442007E7D300D689EE /* PhoenixKitsuMedia.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -250,39 +250,39 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		7C646CFC2006B7B20046FC60 /* PhoenixKitsuMediaTests.xctest */ = {
+		7CC322522007E7D300D689EE /* PhoenixKitsuMediaTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = file;
 			path = PhoenixKitsuMediaTests.xctest;
-			remoteRef = 7C646CFB2006B7B20046FC60 /* PBXContainerItemProxy */;
+			remoteRef = 7CC322512007E7D300D689EE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		7C646CFE2006B7B20046FC60 /* PhoenixKitsuMedia.framework */ = {
+		7CC322542007E7D300D689EE /* PhoenixKitsuMedia.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = PhoenixKitsuMedia.framework;
-			remoteRef = 7C646CFD2006B7B20046FC60 /* PBXContainerItemProxy */;
+			remoteRef = 7CC322532007E7D300D689EE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		7C646D002006B7B20046FC60 /* PhoenixKitsuCore.framework */ = {
+		7CC322562007E7D300D689EE /* PhoenixKitsuCore.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = PhoenixKitsuCore.framework;
-			remoteRef = 7C646CFF2006B7B20046FC60 /* PBXContainerItemProxy */;
+			remoteRef = 7CC322552007E7D300D689EE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		7C646D022006B7B20046FC60 /* Alamofire.framework */ = {
+		7CC322582007E7D300D689EE /* Alamofire.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Alamofire.framework;
-			remoteRef = 7C646D012006B7B20046FC60 /* PBXContainerItemProxy */;
+			remoteRef = 7CC322572007E7D300D689EE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		7C646D042006B7B20046FC60 /* Requestable.framework */ = {
+		7CC3225A2007E7D300D689EE /* Requestable.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Requestable.framework;
-			remoteRef = 7C646D032006B7B20046FC60 /* PBXContainerItemProxy */;
+			remoteRef = 7CC322592007E7D300D689EE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -320,20 +320,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		7C646D082006B7BC0046FC60 /* PBXTargetDependency */ = {
+		7CC3225E2007E7D900D689EE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = PhoenixKitsuMedia;
-			targetProxy = 7C646D072006B7BC0046FC60 /* PBXContainerItemProxy */;
+			targetProxy = 7CC3225D2007E7D900D689EE /* PBXContainerItemProxy */;
 		};
-		7C646D0C2006B7BC0046FC60 /* PBXTargetDependency */ = {
+		7CC322622007E7D900D689EE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = PhoenixKitsuCore;
-			targetProxy = 7C646D0B2006B7BC0046FC60 /* PBXContainerItemProxy */;
+			targetProxy = 7CC322612007E7D900D689EE /* PBXContainerItemProxy */;
 		};
-		7C646D102006B7BC0046FC60 /* PBXTargetDependency */ = {
+		7CC322662007E7D900D689EE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Alamofire;
-			targetProxy = 7C646D0F2006B7BC0046FC60 /* PBXContainerItemProxy */;
+			targetProxy = 7CC322652007E7D900D689EE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
