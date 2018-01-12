@@ -1,0 +1,529 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7C03B8521F86B3380023C0AB /* MangaDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C03B8511F86B3380023C0AB /* MangaDetailViewController.swift */; };
+		7C48DB681EE69FBE00BD69C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C48DB671EE69FBE00BD69C8 /* AppDelegate.swift */; };
+		7C48DB6F1EE69FE300BD69C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C48DB691EE69FE300BD69C8 /* Assets.xcassets */; };
+		7C48DB711EE69FE300BD69C8 /* AnimeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C48DB6B1EE69FE300BD69C8 /* AnimeDetailViewController.swift */; };
+		7C48DB721EE69FE300BD69C8 /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C48DB6C1EE69FE300BD69C8 /* ImageFetcher.swift */; };
+		7C48DB741EE69FE300BD69C8 /* AnimeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C48DB6E1EE69FE300BD69C8 /* AnimeTableViewController.swift */; };
+		7C48DB841EE6A0A000BD69C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C48DB801EE6A0A000BD69C8 /* LaunchScreen.storyboard */; };
+		7C48DB851EE6A0A000BD69C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C48DB821EE6A0A000BD69C8 /* Main.storyboard */; };
+		7C8329441F8BF80700BD4B6E /* PhoenixTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8329431F8BF80700BD4B6E /* PhoenixTableViewController.swift */; };
+		7C8329491F8BF87D00BD4B6E /* PhoenixDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8329481F8BF87D00BD4B6E /* PhoenixDetailViewController.swift */; };
+		7CAFD7D91EF95D9C0028768D /* MangaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAFD7D81EF95D9C0028768D /* MangaTableViewController.swift */; };
+		7CC3225B2007E7D900D689EE /* PhoenixKitsuMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC322542007E7D300D689EE /* PhoenixKitsuMedia.framework */; };
+		7CC3225C2007E7D900D689EE /* PhoenixKitsuMedia.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC322542007E7D300D689EE /* PhoenixKitsuMedia.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7CC3225F2007E7D900D689EE /* PhoenixKitsuCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC322562007E7D300D689EE /* PhoenixKitsuCore.framework */; };
+		7CC322602007E7D900D689EE /* PhoenixKitsuCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC322562007E7D300D689EE /* PhoenixKitsuCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7CC322632007E7D900D689EE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC322582007E7D300D689EE /* Alamofire.framework */; };
+		7CC322642007E7D900D689EE /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC322582007E7D300D689EE /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7CE8333E1E9B91770058BF41 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7CE8333D1E9B91770058BF41 /* Settings.bundle */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7CC322512007E7D300D689EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7CC322442007E7D300D689EE /* PhoenixKitsuMedia.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = "PhoenixKitsuMedia::PhoenixKitsuMediaTests::Product";
+			remoteInfo = PhoenixKitsuMediaTests;
+		};
+		7CC322532007E7D300D689EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7CC322442007E7D300D689EE /* PhoenixKitsuMedia.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = "PhoenixKitsuMedia::PhoenixKitsuMedia::Product";
+			remoteInfo = PhoenixKitsuMedia;
+		};
+		7CC322552007E7D300D689EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7CC322442007E7D300D689EE /* PhoenixKitsuMedia.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = "PhoenixKitsuCore::PhoenixKitsuCore::Product";
+			remoteInfo = PhoenixKitsuCore;
+		};
+		7CC322572007E7D300D689EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7CC322442007E7D300D689EE /* PhoenixKitsuMedia.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = "Alamofire::Alamofire::Product";
+			remoteInfo = Alamofire;
+		};
+		7CC322592007E7D300D689EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7CC322442007E7D300D689EE /* PhoenixKitsuMedia.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = "Requestable::Requestable::Product";
+			remoteInfo = Requestable;
+		};
+		7CC3225D2007E7D900D689EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7CC322442007E7D300D689EE /* PhoenixKitsuMedia.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = "PhoenixKitsuMedia::PhoenixKitsuMedia";
+			remoteInfo = PhoenixKitsuMedia;
+		};
+		7CC322612007E7D900D689EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7CC322442007E7D300D689EE /* PhoenixKitsuMedia.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = "PhoenixKitsuCore::PhoenixKitsuCore";
+			remoteInfo = PhoenixKitsuCore;
+		};
+		7CC322652007E7D900D689EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7CC322442007E7D300D689EE /* PhoenixKitsuMedia.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = "Alamofire::Alamofire";
+			remoteInfo = Alamofire;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7C9AB02F2006A5F9000B25D1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7CC322602007E7D900D689EE /* PhoenixKitsuCore.framework in Embed Frameworks */,
+				7CC322642007E7D900D689EE /* Alamofire.framework in Embed Frameworks */,
+				7CC3225C2007E7D900D689EE /* PhoenixKitsuMedia.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		7C03B8511F86B3380023C0AB /* MangaDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MangaDetailViewController.swift; path = PhoenixMobile/MangaDetailViewController.swift; sourceTree = SOURCE_ROOT; };
+		7C19A88C1E534EB800AF0590 /* PhoenixMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhoenixMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C48DB671EE69FBE00BD69C8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = PhoenixMobile/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
+		7C48DB691EE69FE300BD69C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = PhoenixMobile/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		7C48DB6B1EE69FE300BD69C8 /* AnimeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimeDetailViewController.swift; path = PhoenixMobile/AnimeDetailViewController.swift; sourceTree = SOURCE_ROOT; };
+		7C48DB6C1EE69FE300BD69C8 /* ImageFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageFetcher.swift; path = PhoenixMobile/ImageFetcher.swift; sourceTree = SOURCE_ROOT; };
+		7C48DB6E1EE69FE300BD69C8 /* AnimeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimeTableViewController.swift; path = PhoenixMobile/AnimeTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		7C48DB811EE6A0A000BD69C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = PhoenixMobile/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		7C48DB831EE6A0A000BD69C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = PhoenixMobile/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		7C48DB8A1EE6A15700BD69C8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = PhoenixMobile/Info.plist; sourceTree = SOURCE_ROOT; };
+		7C8329431F8BF80700BD4B6E /* PhoenixTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhoenixTableViewController.swift; path = PhoenixMobile/PhoenixTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		7C8329481F8BF87D00BD4B6E /* PhoenixDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhoenixDetailViewController.swift; path = PhoenixMobile/PhoenixDetailViewController.swift; sourceTree = SOURCE_ROOT; };
+		7CAFD7D81EF95D9C0028768D /* MangaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MangaTableViewController.swift; path = PhoenixMobile/MangaTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		7CC322442007E7D300D689EE /* PhoenixKitsuMedia.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PhoenixKitsuMedia.xcodeproj; path = "../Phoenix-Kitsu-Media/PhoenixKitsuMedia.xcodeproj"; sourceTree = "<group>"; };
+		7CE8333D1E9B91770058BF41 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7C19A8891E534EB800AF0590 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CC3225F2007E7D900D689EE /* PhoenixKitsuCore.framework in Frameworks */,
+				7CC322632007E7D900D689EE /* Alamofire.framework in Frameworks */,
+				7CC3225B2007E7D900D689EE /* PhoenixKitsuMedia.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7C19A8831E534EB800AF0590 = {
+			isa = PBXGroup;
+			children = (
+				7CC322442007E7D300D689EE /* PhoenixKitsuMedia.xcodeproj */,
+				7CE8333D1E9B91770058BF41 /* Settings.bundle */,
+				7C19A88E1E534EB800AF0590 /* PhoenixMobile */,
+				7C19A88D1E534EB800AF0590 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7C19A88D1E534EB800AF0590 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7C19A88C1E534EB800AF0590 /* PhoenixMobile.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7C19A88E1E534EB800AF0590 /* PhoenixMobile */ = {
+			isa = PBXGroup;
+			children = (
+				7C48DB8A1EE6A15700BD69C8 /* Info.plist */,
+				7C48DB801EE6A0A000BD69C8 /* LaunchScreen.storyboard */,
+				7C48DB821EE6A0A000BD69C8 /* Main.storyboard */,
+				7C48DB671EE69FBE00BD69C8 /* AppDelegate.swift */,
+				7C48DB691EE69FE300BD69C8 /* Assets.xcassets */,
+				7C48DB6B1EE69FE300BD69C8 /* AnimeDetailViewController.swift */,
+				7C48DB6C1EE69FE300BD69C8 /* ImageFetcher.swift */,
+				7C48DB6E1EE69FE300BD69C8 /* AnimeTableViewController.swift */,
+				7CAFD7D81EF95D9C0028768D /* MangaTableViewController.swift */,
+				7C03B8511F86B3380023C0AB /* MangaDetailViewController.swift */,
+				7C8329431F8BF80700BD4B6E /* PhoenixTableViewController.swift */,
+				7C8329481F8BF87D00BD4B6E /* PhoenixDetailViewController.swift */,
+			);
+			name = PhoenixMobile;
+			path = TestPhoenixMobile;
+			sourceTree = "<group>";
+		};
+		7CC322452007E7D300D689EE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7CC322522007E7D300D689EE /* PhoenixKitsuMediaTests.xctest */,
+				7CC322542007E7D300D689EE /* PhoenixKitsuMedia.framework */,
+				7CC322562007E7D300D689EE /* PhoenixKitsuCore.framework */,
+				7CC322582007E7D300D689EE /* Alamofire.framework */,
+				7CC3225A2007E7D300D689EE /* Requestable.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7C19A88B1E534EB800AF0590 /* PhoenixMobile */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7C19A89E1E534EB800AF0590 /* Build configuration list for PBXNativeTarget "PhoenixMobile" */;
+			buildPhases = (
+				7C19A8881E534EB800AF0590 /* Sources */,
+				7C19A8891E534EB800AF0590 /* Frameworks */,
+				7C19A88A1E534EB800AF0590 /* Resources */,
+				7C9AB02F2006A5F9000B25D1 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7CC3225E2007E7D900D689EE /* PBXTargetDependency */,
+				7CC322622007E7D900D689EE /* PBXTargetDependency */,
+				7CC322662007E7D900D689EE /* PBXTargetDependency */,
+			);
+			name = PhoenixMobile;
+			productName = TestPhoenixMobile;
+			productReference = 7C19A88C1E534EB800AF0590 /* PhoenixMobile.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7C19A8841E534EB800AF0590 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Job Cuppen";
+				TargetAttributes = {
+					7C19A88B1E534EB800AF0590 = {
+						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 7C19A8871E534EB800AF0590 /* Build configuration list for PBXProject "PhoenixMobile" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7C19A8831E534EB800AF0590;
+			productRefGroup = 7C19A88D1E534EB800AF0590 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 7CC322452007E7D300D689EE /* Products */;
+					ProjectRef = 7CC322442007E7D300D689EE /* PhoenixKitsuMedia.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				7C19A88B1E534EB800AF0590 /* PhoenixMobile */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		7CC322522007E7D300D689EE /* PhoenixKitsuMediaTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = file;
+			path = PhoenixKitsuMediaTests.xctest;
+			remoteRef = 7CC322512007E7D300D689EE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7CC322542007E7D300D689EE /* PhoenixKitsuMedia.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = PhoenixKitsuMedia.framework;
+			remoteRef = 7CC322532007E7D300D689EE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7CC322562007E7D300D689EE /* PhoenixKitsuCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = PhoenixKitsuCore.framework;
+			remoteRef = 7CC322552007E7D300D689EE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7CC322582007E7D300D689EE /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = 7CC322572007E7D300D689EE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7CC3225A2007E7D300D689EE /* Requestable.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Requestable.framework;
+			remoteRef = 7CC322592007E7D300D689EE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7C19A88A1E534EB800AF0590 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CE8333E1E9B91770058BF41 /* Settings.bundle in Resources */,
+				7C48DB851EE6A0A000BD69C8 /* Main.storyboard in Resources */,
+				7C48DB841EE6A0A000BD69C8 /* LaunchScreen.storyboard in Resources */,
+				7C48DB6F1EE69FE300BD69C8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7C19A8881E534EB800AF0590 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C48DB741EE69FE300BD69C8 /* AnimeTableViewController.swift in Sources */,
+				7C8329441F8BF80700BD4B6E /* PhoenixTableViewController.swift in Sources */,
+				7CAFD7D91EF95D9C0028768D /* MangaTableViewController.swift in Sources */,
+				7C8329491F8BF87D00BD4B6E /* PhoenixDetailViewController.swift in Sources */,
+				7C48DB721EE69FE300BD69C8 /* ImageFetcher.swift in Sources */,
+				7C48DB711EE69FE300BD69C8 /* AnimeDetailViewController.swift in Sources */,
+				7C03B8521F86B3380023C0AB /* MangaDetailViewController.swift in Sources */,
+				7C48DB681EE69FBE00BD69C8 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7CC3225E2007E7D900D689EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PhoenixKitsuMedia;
+			targetProxy = 7CC3225D2007E7D900D689EE /* PBXContainerItemProxy */;
+		};
+		7CC322622007E7D900D689EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PhoenixKitsuCore;
+			targetProxy = 7CC322612007E7D900D689EE /* PBXContainerItemProxy */;
+		};
+		7CC322662007E7D900D689EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			targetProxy = 7CC322652007E7D900D689EE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7C48DB801EE6A0A000BD69C8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7C48DB811EE6A0A000BD69C8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		7C48DB821EE6A0A000BD69C8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7C48DB831EE6A0A000BD69C8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7C19A89C1E534EB800AF0590 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7C19A89D1E534EB800AF0590 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7C19A89F1E534EB800AF0590 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6Z7U3Z74Y3;
+				INFOPLIST_FILE = "$(SRCROOT)/PhoenixMobile/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jobcuppen.PhoenixMobile;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7C19A8A01E534EB800AF0590 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6Z7U3Z74Y3;
+				INFOPLIST_FILE = "$(SRCROOT)/PhoenixMobile/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jobcuppen.PhoenixMobile;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7C19A8871E534EB800AF0590 /* Build configuration list for PBXProject "PhoenixMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7C19A89C1E534EB800AF0590 /* Debug */,
+				7C19A89D1E534EB800AF0590 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7C19A89E1E534EB800AF0590 /* Build configuration list for PBXNativeTarget "PhoenixMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7C19A89F1E534EB800AF0590 /* Debug */,
+				7C19A8A01E534EB800AF0590 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7C19A8841E534EB800AF0590 /* Project object */;
+}
