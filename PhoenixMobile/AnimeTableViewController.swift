@@ -5,5 +5,6 @@ class AnimeTableViewController: PhoenixTableViewController<Anime> {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.title = "Anime"
+    self.cellIdentifier = "AnimeCell"
   }
 }

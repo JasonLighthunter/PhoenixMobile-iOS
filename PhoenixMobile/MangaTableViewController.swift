@@ -5,5 +5,6 @@ class MangaTableViewController: PhoenixTableViewController<Manga> {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.title = "Manga"
+    self.cellIdentifier = "MangaCell"
   }
 }

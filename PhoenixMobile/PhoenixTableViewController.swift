@@ -1,29 +1,33 @@
 import UIKit
 import PhoenixKitsuCore
 import PhoenixKitsuMedia
+import Requestable
 
-class PhoenixTableViewController<T : KitsuMediaObject>: UITableViewController {
+class PhoenixTableViewController<T: HasMediaObjectAttributes & Requestable> : UITableViewController {
   internal var filters: [String : String] = [:]
   internal var items: [T] = []
   internal var latestNextLink: String?
-
+  internal var cellIdentifier: String?
+  
+  func callback(_ searchResult: SearchResult<T>?) {
+    if let result = searchResult {
+      DispatchQueue.main.async {
+        self.items.append(contentsOf: result.data ?? [])
+        self.addResultToItems(result)
+      }
+    }
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-
+    
     let nc = NotificationCenter.default
     _ = nc.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: nil, using: catchNotification)
-
+    
     UIApplication.shared.isNetworkActivityIndicatorVisible = true
     
     do {
-      try PhoenixCore.getCollection(withFilters: filters) { (searchResult: SearchResult<T>?) in
-        if let result = searchResult {
-          DispatchQueue.main.async {
-            self.items.append(contentsOf: result.data ?? [])
-            self.addResultToItems(result)
-          }
-        }
-      }
+      try KitsuHandler.getCollection(by: filters, callback: self.callback);
     } catch {
       print(error.localizedDescription)
     }
@@ -34,11 +38,11 @@ class PhoenixTableViewController<T : KitsuMediaObject>: UITableViewController {
       detailcontroller.mediaItem = items[self.tableView.indexPathForSelectedRow!.row]
     }
   }
-
+  
   private func catchNotification(notification: Notification) {
     self.tableView.reloadData()
   }
-
+  
   internal func addResultToItems(_ result: SearchResult<T>) {
     if self.latestNextLink != result.pagingLinks?.next {
       self.latestNextLink = result.pagingLinks?.next
@@ -46,7 +50,7 @@ class PhoenixTableViewController<T : KitsuMediaObject>: UITableViewController {
     }
     UIApplication.shared.isNetworkActivityIndicatorVisible = false
   }
-
+  
   internal func getTitleLanguageEnum() -> TitleLanguageIdentifierEnum {
     guard let titleLanguagePreferenceString = UserDefaults.standard.string(forKey: "display_language_preference") else {
       return TitleLanguageIdentifierEnum.canonical
@@ -59,7 +63,7 @@ class PhoenixTableViewController<T : KitsuMediaObject>: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
+    let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier!, for: indexPath)
     
     let item = items[indexPath.row]
     
@@ -77,24 +81,11 @@ class PhoenixTableViewController<T : KitsuMediaObject>: UITableViewController {
     let frameHeight = scrollView.frame.size.height
     let doingRequest = UIApplication.shared.isNetworkActivityIndicatorVisible
     
-    if offsetY > contentHeight - frameHeight, doingRequest == false, let next = latestNextLink {
-      
+    if offsetY > contentHeight - frameHeight, doingRequest == false, let nextURL = latestNextLink {
       UIApplication.shared.isNetworkActivityIndicatorVisible = true
-      
       //only prevents adding to list not firing request.
-      do {
-        try PhoenixCore.getCollection(byURL: next) { (searchResult : SearchResult<T>?) in
-          if let result = searchResult {
-            DispatchQueue.main.async {
-              //if(result.data == nil) { print(next);}
-              self.items.append(contentsOf: result.data ?? [])
-              self.addResultToItems(result)
-            }
-          }
-        }
-      } catch {
-        print(error.localizedDescription) //TODO: handle error
-      }
+      KitsuHandler.getCollection(by: nextURL, callback: self.callback);
     }
   }
 }
+
