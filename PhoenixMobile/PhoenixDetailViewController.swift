@@ -19,7 +19,7 @@ class PhoenixDetailViewController<T: HasMediaObjectAttributes & Requestable>: UI
     
     UIApplication.shared.isNetworkActivityIndicatorVisible = true
     
-    ImageFetcher.getFrom(URL(string: (attributes?.posterImage?.small)!)!) { imageResult in
+    func imageCallback(_ imageResult: UIImage?) {
       if let image = imageResult {
         DispatchQueue.main.async {
           self.posterImageView.image = image
@@ -27,6 +27,10 @@ class PhoenixDetailViewController<T: HasMediaObjectAttributes & Requestable>: UI
         }
       }
     }
+    
+    let requestURL = URL(string: (attributes?.posterImage?.small)!)!
+    
+    ImageFetcher.getFrom(requestURL, callback: imageCallback)
     
     synopsisLabel.text = attributes?.synopsis
   }
