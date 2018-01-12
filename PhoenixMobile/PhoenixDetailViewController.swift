@@ -9,30 +9,27 @@ class PhoenixDetailViewController<T: HasMediaObjectAttributes & Requestable>: UI
 
   var mediaItem: T?
   
+  func imageCallback(_ imageResult: UIImage?) {
+    if let image = imageResult {
+      DispatchQueue.main.async {
+        self.posterImageView.image = image
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+      }
+    }
+  }
+  
   override func viewDidLoad() {
     let nc = NotificationCenter.default
     _ = nc.addObserver(forName:UserDefaults.didChangeNotification, object: nil, queue: nil, using: catchNotification)
     
     self.setTitle()
     
-    let attributes = mediaItem?.attributes
-    
     UIApplication.shared.isNetworkActivityIndicatorVisible = true
     
-    func imageCallback(_ imageResult: UIImage?) {
-      if let image = imageResult {
-        DispatchQueue.main.async {
-          self.posterImageView.image = image
-          UIApplication.shared.isNetworkActivityIndicatorVisible = false
-        }
-      }
-    }
-    
-    let requestURL = URL(string: (attributes?.posterImage?.small)!)!
-    
+    let requestURL = URL(string: mediaItem?.attributes?.posterImage?.small!)
     ImageFetcher.getFrom(requestURL, callback: imageCallback)
     
-    synopsisLabel.text = attributes?.synopsis
+    synopsisLabel.text = mediaItem?.attributes?.synopsis
   }
   
   internal func catchNotification(notification: Notification) {
