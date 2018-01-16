@@ -1,7 +1,14 @@
 import UIKit
+import PhoenixKitsuCore
 
-class ProfileViewController: UIViewController {  
+class ProfileViewController: UIViewController, HasKitsuHandler {
   @IBOutlet weak var profileLabel: UILabel!
+  
+  private var kitsuHandler: KitsuHandler!
+  
+  func setKitsuHandler(_ handler: KitsuHandler) {
+    self.kitsuHandler = handler
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -16,9 +23,16 @@ class ProfileViewController: UIViewController {
   func showLoginView() {
     
     if !(AuthenticationUtility.isAuthenticated) {
+      
       performSegue(withIdentifier: "loginView", sender: self)
     } else {
       profileLabel.text = "you are now logged in"
+    }
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let loginController = segue.destination as? LoginViewController {
+      loginController.setKitsuHandler(kitsuHandler)
     }
   }
 }

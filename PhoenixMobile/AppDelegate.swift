@@ -1,4 +1,5 @@
 import UIKit
+import PhoenixKitsuCore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -8,6 +9,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
+    let decoder = JSONDecoder()
+    let networkingUtility = NetworkingUtility()
+    let kitsuHandler = KitsuHandler(decoder: decoder, networkingUtility: networkingUtility)
+    
+    if let tab = window?.rootViewController as? UITabBarController {
+      for child in tab.viewControllers ?? [] {
+        if let nav = child as? UINavigationController {
+          for viewController in nav.viewControllers {
+            if let item = viewController as? HasKitsuHandler {
+              item.setKitsuHandler(kitsuHandler)
+            }
+          }
+        }
+      }
+    }
     return true
   }
 

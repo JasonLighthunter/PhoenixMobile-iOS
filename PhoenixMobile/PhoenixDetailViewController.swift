@@ -2,12 +2,17 @@ import UIKit
 import PhoenixKitsuMedia
 import Requestable
 
-class PhoenixDetailViewController<T: HasMediaObjectAttributes & Requestable>: UIViewController {
+class PhoenixDetailViewController<T: HasMediaObjectAttributes & Requestable>: UIViewController, HasImageFetcher {
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var synopsisLabel: UILabel!
   @IBOutlet weak var posterImageView: UIImageView!
 
-  var mediaItem: T?
+  var mediaItem: T!
+  private var imageFetcher: ImageFetcher!
+  
+  func setImageFetcher(_ imageFetcher: ImageFetcher) {
+    self.imageFetcher = imageFetcher
+  }
   
   func imageCallback(_ imageResult: UIImage?) {
     if let image = imageResult {
@@ -27,7 +32,7 @@ class PhoenixDetailViewController<T: HasMediaObjectAttributes & Requestable>: UI
     UIApplication.shared.isNetworkActivityIndicatorVisible = true
     
     let requestURL = URL(string: (mediaItem?.attributes?.posterImage?.small!)!)
-    ImageFetcher.getFrom(requestURL!, callback: imageCallback)
+    imageFetcher.getImageFrom(requestURL!, callback: imageCallback)
     
     synopsisLabel.text = mediaItem?.attributes?.synopsis
   }

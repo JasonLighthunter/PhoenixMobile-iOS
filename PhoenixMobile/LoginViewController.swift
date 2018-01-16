@@ -6,7 +6,7 @@ struct KeychainConfiguration {
   static let accessGroup: String? = nil
 }
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, HasKitsuHandler {
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var usernameField: UITextField!
   @IBOutlet weak var passwordField: UITextField!
@@ -21,10 +21,11 @@ class LoginViewController: UIViewController {
                                              message: "No account with that username",
                                              preferredStyle: .alert)
   
-  let createLoginButtonTag = 0
-  let loginButtonTag = 1
+  private var kitsuHandler: KitsuHandler!
   
-  let decoder = JSONDecoder()
+  func setKitsuHandler(_ handler: KitsuHandler) {
+    self.kitsuHandler = handler
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -49,28 +50,20 @@ class LoginViewController: UIViewController {
     
     setAccountName(accountName)
     
-    
-    AuthenticationUtility.getToken(with: accountName, and: password) { responseData, error in
-      do {
-        let tokenResponse = try self.decoder.decode(TokenResponse.self, from: responseData!)
-        AuthenticationUtility.setAccessToken(tokenResponse.accessToken)
-        
-        let passwordItem = KeychainPasswordItem(service: KeychainConfiguration.serviceName,
-                                                account: accountName,
-                                                accessGroup: KeychainConfiguration.accessGroup)
-        do {
-          // This is a new account, create a new keychain item with the account name.
-          try passwordItem.savePassword(tokenResponse.refreshToken)
-        } catch {
-          fatalError("Error updating keychain - \(error)")
-        }
-      } catch {
-        print(error.localizedDescription)
+    kitsuHandler.getTokenResponse(with: accountName, and: password) { response in
+      guard let tokenResponse = response else {
+        return self.present(self.loginErrorAlert, animated: true)
       }
-      
-      UserDefaults.standard.set(true, forKey: "hasLoginKey")
-      
-      self.dismiss(animated: true)
+      AuthenticationUtility.setAccessToken(tokenResponse.accessToken)
+      let passwordItem = KeychainPasswordItem(service: KeychainConfiguration.serviceName,
+                                              account: accountName,
+                                              accessGroup: KeychainConfiguration.accessGroup)
+      do {
+        try passwordItem.savePassword(tokenResponse.refreshToken)
+        self.dismiss(animated: true)
+      } catch {
+        fatalError("Error updating keychain - \(error)")
+      }
     }
   }
   
