@@ -26,8 +26,8 @@ class PhoenixDetailViewController<T: HasMediaObjectAttributes & Requestable>: UI
     
     UIApplication.shared.isNetworkActivityIndicatorVisible = true
     
-    let requestURL = URL(string: mediaItem?.attributes?.posterImage?.small!)
-    ImageFetcher.getFrom(requestURL, callback: imageCallback)
+    let requestURL = URL(string: (mediaItem?.attributes?.posterImage?.small!)!)
+    ImageFetcher.getFrom(requestURL!, callback: imageCallback)
     
     synopsisLabel.text = mediaItem?.attributes?.synopsis
   }

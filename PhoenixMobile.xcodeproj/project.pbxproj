@@ -18,12 +18,18 @@
 		7C8329441F8BF80700BD4B6E /* PhoenixTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8329431F8BF80700BD4B6E /* PhoenixTableViewController.swift */; };
 		7C8329491F8BF87D00BD4B6E /* PhoenixDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8329481F8BF87D00BD4B6E /* PhoenixDetailViewController.swift */; };
 		7CAFD7D91EF95D9C0028768D /* MangaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAFD7D81EF95D9C0028768D /* MangaTableViewController.swift */; };
+		7CB88946200CDBDF003A7D0C /* AuthenticationUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB88945200CDBDF003A7D0C /* AuthenticationUtility.swift */; };
 		7CC3225B2007E7D900D689EE /* PhoenixKitsuMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC322542007E7D300D689EE /* PhoenixKitsuMedia.framework */; };
 		7CC3225C2007E7D900D689EE /* PhoenixKitsuMedia.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC322542007E7D300D689EE /* PhoenixKitsuMedia.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7CC3225F2007E7D900D689EE /* PhoenixKitsuCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC322562007E7D300D689EE /* PhoenixKitsuCore.framework */; };
 		7CC322602007E7D900D689EE /* PhoenixKitsuCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC322562007E7D300D689EE /* PhoenixKitsuCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7CC322632007E7D900D689EE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC322582007E7D300D689EE /* Alamofire.framework */; };
 		7CC322642007E7D900D689EE /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC322582007E7D300D689EE /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7CC747EA200CC0AD001C1958 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC747E9200CC0AD001C1958 /* LoginViewController.swift */; };
+		7CC747EC200CC764001C1958 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC747EB200CC764001C1958 /* KeychainPasswordItem.swift */; };
+		7CC747EE200CCF20001C1958 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC747ED200CCF20001C1958 /* ProfileViewController.swift */; };
+		7CD92A9E200E578200F89AB7 /* Requestable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC3225A2007E7D300D689EE /* Requestable.framework */; };
+		7CD92A9F200E578200F89AB7 /* Requestable.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC3225A2007E7D300D689EE /* Requestable.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7CE8333E1E9B91770058BF41 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7CE8333D1E9B91770058BF41 /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +90,13 @@
 			remoteGlobalIDString = "Alamofire::Alamofire";
 			remoteInfo = Alamofire;
 		};
+		7CD92AA0200E578200F89AB7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7CC322442007E7D300D689EE /* PhoenixKitsuMedia.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = "Requestable::Requestable";
+			remoteInfo = Requestable;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -95,6 +108,7 @@
 			files = (
 				7CC322602007E7D900D689EE /* PhoenixKitsuCore.framework in Embed Frameworks */,
 				7CC322642007E7D900D689EE /* Alamofire.framework in Embed Frameworks */,
+				7CD92A9F200E578200F89AB7 /* Requestable.framework in Embed Frameworks */,
 				7CC3225C2007E7D900D689EE /* PhoenixKitsuMedia.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -116,7 +130,11 @@
 		7C8329431F8BF80700BD4B6E /* PhoenixTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhoenixTableViewController.swift; path = PhoenixMobile/PhoenixTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		7C8329481F8BF87D00BD4B6E /* PhoenixDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhoenixDetailViewController.swift; path = PhoenixMobile/PhoenixDetailViewController.swift; sourceTree = SOURCE_ROOT; };
 		7CAFD7D81EF95D9C0028768D /* MangaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MangaTableViewController.swift; path = PhoenixMobile/MangaTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		7CB88945200CDBDF003A7D0C /* AuthenticationUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthenticationUtility.swift; path = PhoenixMobile/AuthenticationUtility.swift; sourceTree = SOURCE_ROOT; };
 		7CC322442007E7D300D689EE /* PhoenixKitsuMedia.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PhoenixKitsuMedia.xcodeproj; path = "../Phoenix-Kitsu-Media/PhoenixKitsuMedia.xcodeproj"; sourceTree = "<group>"; };
+		7CC747E9200CC0AD001C1958 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = PhoenixMobile/LoginViewController.swift; sourceTree = SOURCE_ROOT; };
+		7CC747EB200CC764001C1958 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeychainPasswordItem.swift; path = PhoenixMobile/KeychainPasswordItem.swift; sourceTree = SOURCE_ROOT; };
+		7CC747ED200CCF20001C1958 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = PhoenixMobile/ProfileViewController.swift; sourceTree = SOURCE_ROOT; };
 		7CE8333D1E9B91770058BF41 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,6 +145,7 @@
 			files = (
 				7CC3225F2007E7D900D689EE /* PhoenixKitsuCore.framework in Frameworks */,
 				7CC322632007E7D900D689EE /* Alamofire.framework in Frameworks */,
+				7CD92A9E200E578200F89AB7 /* Requestable.framework in Frameworks */,
 				7CC3225B2007E7D900D689EE /* PhoenixKitsuMedia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -155,6 +174,7 @@
 		7C19A88E1E534EB800AF0590 /* PhoenixMobile */ = {
 			isa = PBXGroup;
 			children = (
+				7CC747EB200CC764001C1958 /* KeychainPasswordItem.swift */,
 				7C48DB8A1EE6A15700BD69C8 /* Info.plist */,
 				7C48DB801EE6A0A000BD69C8 /* LaunchScreen.storyboard */,
 				7C48DB821EE6A0A000BD69C8 /* Main.storyboard */,
@@ -167,6 +187,9 @@
 				7C03B8511F86B3380023C0AB /* MangaDetailViewController.swift */,
 				7C8329431F8BF80700BD4B6E /* PhoenixTableViewController.swift */,
 				7C8329481F8BF87D00BD4B6E /* PhoenixDetailViewController.swift */,
+				7CC747E9200CC0AD001C1958 /* LoginViewController.swift */,
+				7CC747ED200CCF20001C1958 /* ProfileViewController.swift */,
+				7CB88945200CDBDF003A7D0C /* AuthenticationUtility.swift */,
 			);
 			name = PhoenixMobile;
 			path = TestPhoenixMobile;
@@ -202,6 +225,7 @@
 				7CC3225E2007E7D900D689EE /* PBXTargetDependency */,
 				7CC322622007E7D900D689EE /* PBXTargetDependency */,
 				7CC322662007E7D900D689EE /* PBXTargetDependency */,
+				7CD92AA1200E578200F89AB7 /* PBXTargetDependency */,
 			);
 			name = PhoenixMobile;
 			productName = TestPhoenixMobile;
@@ -306,13 +330,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CC747EA200CC0AD001C1958 /* LoginViewController.swift in Sources */,
 				7C48DB741EE69FE300BD69C8 /* AnimeTableViewController.swift in Sources */,
 				7C8329441F8BF80700BD4B6E /* PhoenixTableViewController.swift in Sources */,
 				7CAFD7D91EF95D9C0028768D /* MangaTableViewController.swift in Sources */,
 				7C8329491F8BF87D00BD4B6E /* PhoenixDetailViewController.swift in Sources */,
+				7CC747EC200CC764001C1958 /* KeychainPasswordItem.swift in Sources */,
+				7CC747EE200CCF20001C1958 /* ProfileViewController.swift in Sources */,
 				7C48DB721EE69FE300BD69C8 /* ImageFetcher.swift in Sources */,
 				7C48DB711EE69FE300BD69C8 /* AnimeDetailViewController.swift in Sources */,
 				7C03B8521F86B3380023C0AB /* MangaDetailViewController.swift in Sources */,
+				7CB88946200CDBDF003A7D0C /* AuthenticationUtility.swift in Sources */,
 				7C48DB681EE69FBE00BD69C8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -334,6 +362,11 @@
 			isa = PBXTargetDependency;
 			name = Alamofire;
 			targetProxy = 7CC322652007E7D900D689EE /* PBXContainerItemProxy */;
+		};
+		7CD92AA1200E578200F89AB7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Requestable;
+			targetProxy = 7CD92AA0200E578200F89AB7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
