@@ -1,13 +1,22 @@
 import UIKit
-import PhoenixKitsuCore
+import Alamofire
 
 class ImageFetcher {
-  func getImageFrom(_ url: URL, callback: @escaping (UIImage?) -> Void) {
-    NetworkingUtility().getDataFrom(url.absoluteString) { response, error in
-      guard let data = response else { return callback(nil) }
-      
-      let image = UIImage(data: data)
-      callback(image)
+  private func handle(response: DataResponse<Data>, _ callback: (Data?, Error?) -> Void) {
+    switch response.result {
+    case .failure(let error): callback(nil, error)
+    case .success: callback(response.result.value, nil)
+    }
+  }
+  
+  func getImageFrom(_ url: String, callback: @escaping (UIImage?) -> Void) {
+    Alamofire.request(url).responseData { response in
+      self.handle(response: response) { data, error in
+        guard error == nil else { return callback(nil) }
+        guard let image = UIImage(data: data!) else { return callback(nil) }
+        
+        callback(image)
+      }
     }
   }
 }

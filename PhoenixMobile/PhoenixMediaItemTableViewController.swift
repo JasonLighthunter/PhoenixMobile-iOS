@@ -27,6 +27,7 @@ PhoenixItemTableViewController<T> {
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let detailcontroller = segue.destination as? PhoenixDetailViewController<T> {
+      detailcontroller.setImageFetcher(self.imageFetcher)
       detailcontroller.mediaItem = items[self.tableView.indexPathForSelectedRow!.row]
     }
   }

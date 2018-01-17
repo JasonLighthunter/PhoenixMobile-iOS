@@ -28,13 +28,15 @@ class PhoenixDetailViewController<T: HasMediaObjectAttributes & Requestable>: UI
     _ = nc.addObserver(forName:UserDefaults.didChangeNotification, object: nil, queue: nil, using: catchNotification)
     
     self.setTitle()
-    
+    synopsisLabel.text = mediaItem?.attributes?.synopsis
+
     UIApplication.shared.isNetworkActivityIndicatorVisible = true
     
-    let requestURL = URL(string: (mediaItem?.attributes?.posterImage?.small!)!)
-    imageFetcher.getImageFrom(requestURL!, callback: imageCallback)
-    
-    synopsisLabel.text = mediaItem?.attributes?.synopsis
+    if let requestURL = mediaItem?.attributes?.posterImage?.small {
+      imageFetcher.getImageFrom(requestURL, callback: imageCallback)
+    } else {
+      posterImageView.image = nil
+    }
   }
   
   internal func catchNotification(notification: Notification) {

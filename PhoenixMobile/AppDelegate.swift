@@ -7,8 +7,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
   
   private let decoder = JSONDecoder()
-  private let networkingUtility = NetworkingUtility()
-
+  
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
@@ -26,19 +25,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       }
     }
   }
-  
   private func handleInjection(for navigationController: UINavigationController) {
     for viewController in navigationController.viewControllers {
       injectKitsuHandler(into: viewController)
+      injectImageFetcher(into: viewController)
     }
   }
   
   private func injectKitsuHandler(into viewController: UIViewController) {
-    let kitsuHandler = KitsuHandler(decoder: decoder, networkingUtility: networkingUtility)
-
-    if let item = viewController as? HasKitsuHandler {
-      item.setKitsuHandler(kitsuHandler)
-    }
+    let kitsuHandler = KitsuHandler(decoder: decoder)
+    if let item = viewController as? HasKitsuHandler { item.setKitsuHandler(kitsuHandler) }
+  }
+  
+  private func injectImageFetcher(into viewController: UIViewController) {
+    let imageFetcher = ImageFetcher()
+    if let item = viewController as? HasImageFetcher { item.setImageFetcher(imageFetcher) }
   }
 
   func applicationWillResignActive(_ application: UIApplication) {

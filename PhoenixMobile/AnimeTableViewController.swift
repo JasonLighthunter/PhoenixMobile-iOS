@@ -1,4 +1,3 @@
-import UIKit
 import PhoenixKitsuMedia
 
 class AnimeTableViewController: PhoenixMediaItemTableViewController<Anime> {
