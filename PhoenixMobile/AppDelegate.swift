@@ -13,19 +13,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                    didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
     
-    if let rootViewController = window?.rootViewController as? UITabBarController {
-      handleInjection(from: rootViewController)
+    if let root = window?.rootViewController as? UITabBarController {
+      handleInjection(for: root)
     }
     return true
   }
   
-  private func handleInjection(from rootViewController: UITabBarController) {
+  private func handleInjection(for rootViewController: UITabBarController) {
     for tab in rootViewController.viewControllers ?? [] {
       if let nav = tab as? UINavigationController {
-        for viewController in nav.viewControllers {
-          injectKitsuHandler(into: viewController)
-        }
+        handleInjection(for: nav)
       }
+    }
+  }
+  
+  private func handleInjection(for navigationController: UINavigationController) {
+    for viewController in navigationController.viewControllers {
+      injectKitsuHandler(into: viewController)
     }
   }
   
