@@ -36,6 +36,23 @@ class LoginViewController: UIViewController, HasKitsuHandler {
     titleLabel.text = "Login"
   }
   
+  private func handleTokenResponse(_ response: TokenResponse?) {
+    guard let tokenResponse = response, let accountName = getAccountName() else {
+      return self.present(self.loginErrorAlert, animated: true)
+    }
+    
+    AuthenticationUtility.setAccessToken(tokenResponse.accessToken)
+    let passwordItem = KeychainPasswordItem(service: KeychainConfiguration.serviceName,
+                                            account: accountName,
+                                            accessGroup: KeychainConfiguration.accessGroup)
+    do {
+      try passwordItem.savePassword(tokenResponse.refreshToken)
+    } catch {
+      fatalError("Error updating keychain - \(error)")
+    }
+    self.dismiss(animated: true)
+  }
+  
   @IBAction func loginClicked(_ sender: AnyObject) {
     guard
       let accountName = usernameField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
@@ -50,21 +67,7 @@ class LoginViewController: UIViewController, HasKitsuHandler {
     
     setAccountName(accountName)
     
-    kitsuHandler.getTokenResponse(with: accountName, and: password) { response in
-      guard let tokenResponse = response else {
-        return self.present(self.loginErrorAlert, animated: true)
-      }
-      AuthenticationUtility.setAccessToken(tokenResponse.accessToken)
-      let passwordItem = KeychainPasswordItem(service: KeychainConfiguration.serviceName,
-                                              account: accountName,
-                                              accessGroup: KeychainConfiguration.accessGroup)
-      do {
-        try passwordItem.savePassword(tokenResponse.refreshToken)
-        self.dismiss(animated: true)
-      } catch {
-        fatalError("Error updating keychain - \(error)")
-      }
-    }
+    kitsuHandler.getTokenResponse(with: accountName, and: password, callback: handleTokenResponse)
   }
   
   private func getAccountName() -> String? {
