@@ -3,13 +3,9 @@ import PhoenixKitsuCore
 import PhoenixKitsuMedia
 import Requestable
 
-class PhoenixTableViewController<T: HasMediaObjectAttributes & Requestable> : UITableViewController {
-  internal var filters: [String : String] = [:]
-  internal var items: [T] = []
-  internal var latestNextLink: String?
-  internal var cellIdentifier: String?
-  
-  func callback(_ searchResult: SearchResult<T>?) {
+class PhoenixMediaItemTableViewController<T: HasMediaObjectAttributes & Requestable> :
+PhoenixItemTableViewController<T> {
+  private func callback(_ searchResult: SearchResult<T>?) {
     if let result = searchResult {
       DispatchQueue.main.async {
         self.items.append(contentsOf: result.data ?? [])
@@ -20,17 +16,13 @@ class PhoenixTableViewController<T: HasMediaObjectAttributes & Requestable> : UI
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+        
     let nc = NotificationCenter.default
     _ = nc.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: nil, using: catchNotification)
     
     UIApplication.shared.isNetworkActivityIndicatorVisible = true
     
-    do {
-      try KitsuHandler.getCollection(by: filters, callback: self.callback);
-    } catch {
-      print(error.localizedDescription)
-    }
+    kitsuHandler.getCollection(by: filters, callback: self.callback);
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -84,8 +76,7 @@ class PhoenixTableViewController<T: HasMediaObjectAttributes & Requestable> : UI
     if offsetY > contentHeight - frameHeight, doingRequest == false, let nextURL = latestNextLink {
       UIApplication.shared.isNetworkActivityIndicatorVisible = true
       //only prevents adding to list not firing request.
-      KitsuHandler.getCollection(by: nextURL, callback: self.callback);
+      kitsuHandler.getCollection(by: nextURL, callback: self.callback);
     }
   }
 }
-

@@ -1,14 +1,44 @@
 import UIKit
+import PhoenixKitsuCore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
+  
+  private let decoder = JSONDecoder()
+  private let networkingUtility = NetworkingUtility()
 
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
+    
+    if let root = window?.rootViewController as? UITabBarController {
+      handleInjection(for: root)
+    }
     return true
+  }
+  
+  private func handleInjection(for rootViewController: UITabBarController) {
+    for tab in rootViewController.viewControllers ?? [] {
+      if let nav = tab as? UINavigationController {
+        handleInjection(for: nav)
+      }
+    }
+  }
+  
+  private func handleInjection(for navigationController: UINavigationController) {
+    for viewController in navigationController.viewControllers {
+      injectKitsuHandler(into: viewController)
+    }
+  }
+  
+  private func injectKitsuHandler(into viewController: UIViewController) {
+    let kitsuHandler = KitsuHandler(decoder: decoder, networkingUtility: networkingUtility)
+
+    if let item = viewController as? HasKitsuHandler {
+      item.setKitsuHandler(kitsuHandler)
+    }
   }
 
   func applicationWillResignActive(_ application: UIApplication) {
