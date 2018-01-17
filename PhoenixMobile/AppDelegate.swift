@@ -17,14 +17,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       for child in tab.viewControllers ?? [] {
         if let nav = child as? UINavigationController {
           for viewController in nav.viewControllers {
-            if let item = viewController as? HasKitsuHandler {
-              item.setKitsuHandler(kitsuHandler)
-            }
+            inject(kitsuHandler, into: viewController)
           }
         }
       }
     }
     return true
+  }
+  
+  private func inject(_ kitsuHandler: KitsuHandler, into viewController: UIViewController) {
+    if let item = viewController as? HasKitsuHandler {
+      item.setKitsuHandler(kitsuHandler)
+    }
   }
 
   func applicationWillResignActive(_ application: UIApplication) {
