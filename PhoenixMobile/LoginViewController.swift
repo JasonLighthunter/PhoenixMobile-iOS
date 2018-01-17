@@ -41,7 +41,7 @@ class LoginViewController: UIViewController, HasKitsuHandler {
       return self.present(self.loginErrorAlert, animated: true)
     }
     
-    AuthenticationUtility.setAccessToken(tokenResponse.accessToken)
+    AuthenticationUtility.set(accessToken: tokenResponse.accessToken)
     let passwordItem = KeychainPasswordItem(service: KeychainConfiguration.serviceName,
                                             account: accountName,
                                             accessGroup: KeychainConfiguration.accessGroup)
@@ -78,21 +78,25 @@ class LoginViewController: UIViewController, HasKitsuHandler {
     UserDefaults.standard.setValue(accountName, forKey: "username")
   }
   
-  @IBAction func deleteButtonClicked(_ sender: Any) {
-    guard let accountName = getAccountName() else {
-      present(loginErrorAlert, animated: true)
-      return
-    }
-    
-    let passwordItem = KeychainPasswordItem(service: KeychainConfiguration.serviceName,
-                                            account: accountName,
-                                            accessGroup: KeychainConfiguration.accessGroup)
-    do {
-      try passwordItem.deleteItem()
-    } catch {
-      present(loginErrorAlert, animated: true)
-    }
-    UserDefaults.standard.removeObject(forKey: "username")
+  @IBAction func dismissButtonClicked(_ sender: Any) {
     self.dismiss(animated: true)
   }
+  
+//  @IBAction func deleteButtonClicked(_ sender: Any) {
+//    guard let accountName = getAccountName() else {
+//      present(loginErrorAlert, animated: true)
+//      return
+//    }
+//
+//    let passwordItem = KeychainPasswordItem(service: KeychainConfiguration.serviceName,
+//                                            account: accountName,
+//                                            accessGroup: KeychainConfiguration.accessGroup)
+//    do {
+//      try passwordItem.deleteItem()
+//    } catch {
+//      present(loginErrorAlert, animated: true)
+//    }
+//    UserDefaults.standard.removeObject(forKey: "username")
+//    self.dismiss(animated: true)
+//  }
 }

@@ -1,8 +1,22 @@
 import UIKit
 import PhoenixKitsuCore
+import PhoenixKitsuUsers
+
+enum LoginBarItemStatus: String {
+  case login = "Log In"
+  case logout = "Log Out"
+}
 
 class ProfileViewController: UIViewController, HasKitsuHandler {
   @IBOutlet weak var profileLabel: UILabel!
+  
+  private var loginBarItemStatus: LoginBarItemStatus {
+    get {
+      return AuthenticationUtility.isAuthenticated ? .logout : .login
+    }
+  }
+  
+  private var user : User?
   
   private var kitsuHandler: KitsuHandler!
   
@@ -12,21 +26,29 @@ class ProfileViewController: UIViewController, HasKitsuHandler {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    showLoginView()
+//    showLoginView()
   }
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    showLoginView()
+//    showLoginView()
   }
   
-  func showLoginView() {
-    
-    if !(AuthenticationUtility.isAuthenticated) {
-      
+  @IBAction func LoginBarItemClicked(_ sender: Any) {
+    if loginBarItemStatus == .login {
       performSegue(withIdentifier: "loginView", sender: self)
     } else {
-      profileLabel.text = "you are now logged in"
+      AuthenticationUtility.logout()
+    }
+  }
+  
+  func showProfileInfo() {
+    if AuthenticationUtility.isAuthenticated,
+      let user = AuthenticationUtility.loggedInUser,
+      let userAttributes = user.attributes
+    {
+      self.user = user
+      profileLabel.text = "Welcome back, " + (userAttributes.name ?? "mysterious stranger")
     }
   }
   

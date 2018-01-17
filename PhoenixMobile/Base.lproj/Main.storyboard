@@ -85,7 +85,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This is your profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7w-ay-oIK">
-                                <rect key="frame" x="117" y="323" width="140" height="21"/>
+                                <rect key="frame" x="101" y="236" width="140" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -94,7 +94,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <navigationItem key="navigationItem" id="JOm-lI-dQI"/>
+                    <navigationItem key="navigationItem" id="JOm-lI-dQI">
+                        <barButtonItem key="rightBarButtonItem" title="Login" id="z3W-ET-CFh">
+                            <connections>
+                                <action selector="LoginBarItemClicked:" destination="cIx-Da-sVb" id="g9a-Z9-Sjq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="profileLabel" destination="h7w-ay-oIK" id="NnB-hl-HTu"/>
                         <segue destination="pwm-03-eTV" kind="presentation" identifier="loginView" id="OYu-98-cec"/>
@@ -148,9 +154,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4D-dl-Qox">
                                 <rect key="frame" x="106" y="370" width="163" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Delete"/>
+                                <state key="normal" title="Dismiss"/>
                                 <connections>
-                                    <action selector="deleteButtonClicked:" destination="pwm-03-eTV" eventType="primaryActionTriggered" id="ASP-zN-Qvk"/>
+                                    <action selector="dismissButtonClicked:" destination="pwm-03-eTV" eventType="primaryActionTriggered" id="VfA-uL-MqJ"/>
                                 </connections>
                             </button>
                         </subviews>
