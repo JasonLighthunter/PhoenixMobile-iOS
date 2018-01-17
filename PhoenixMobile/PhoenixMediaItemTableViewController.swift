@@ -3,18 +3,8 @@ import PhoenixKitsuCore
 import PhoenixKitsuMedia
 import Requestable
 
-class PhoenixTableViewController<T: HasMediaObjectAttributes & Requestable> : UITableViewController, HasKitsuHandler {
-  internal var filters: [String : String] = [:]
-  internal var items: [T] = []
-  internal var latestNextLink: String?
-  internal var cellIdentifier: String?
-  
-  private var kitsuHandler: KitsuHandler!
-  
-  func setKitsuHandler(_ handler: KitsuHandler) {
-    self.kitsuHandler = handler
-  }
-  
+class PhoenixMediaItemTableViewController<T: HasMediaObjectAttributes & Requestable> :
+PhoenixItemTableViewController<T> {
   private func callback(_ searchResult: SearchResult<T>?) {
     if let result = searchResult {
       DispatchQueue.main.async {
@@ -26,7 +16,7 @@ class PhoenixTableViewController<T: HasMediaObjectAttributes & Requestable> : UI
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+        
     let nc = NotificationCenter.default
     _ = nc.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: nil, using: catchNotification)
     
