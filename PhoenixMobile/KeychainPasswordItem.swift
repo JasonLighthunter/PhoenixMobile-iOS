@@ -7,7 +7,8 @@
 */
 
 import Foundation
-
+// thrid-party code
+// codebeat:disable[ABC]
 struct KeychainPasswordItem {
     // MARK: Types
     
@@ -176,3 +177,4 @@ struct KeychainPasswordItem {
         return query
     }
 }
+// codebeat:enable[ABC]
