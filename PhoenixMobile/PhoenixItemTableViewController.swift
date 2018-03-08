@@ -10,8 +10,8 @@ UITableViewController {
   var latestNextLink: String?
   var cellIdentifier: String?
   
-  private(set) var kitsuHandler: KitsuHandler!
   private(set) var imageFetcher: ImageFetcher!
+  private(set) var kitsuHandler: KitsuHandler!
 }
 // codebeat:enable[TOO_MANY_IVARS]
 

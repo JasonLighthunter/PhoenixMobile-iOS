@@ -2,26 +2,14 @@ import UIKit
 import PhoenixKitsuMedia
 import Requestable
 
-class PhoenixDetailViewController<T: HasMediaObjectAttributes & Requestable>: UIViewController, HasImageFetcher {
+class PhoenixDetailViewController<T: HasMediaObjectAttributes & Requestable>: UIViewController {
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var synopsisLabel: UILabel!
   @IBOutlet weak var posterImageView: UIImageView!
 
-  var mediaItem: T!
   private var imageFetcher: ImageFetcher!
-  
-  func setImageFetcher(_ imageFetcher: ImageFetcher) {
-    self.imageFetcher = imageFetcher
-  }
-  
-  func imageCallback(_ imageResult: UIImage?) {
-    if let image = imageResult {
-      DispatchQueue.main.async {
-        self.posterImageView.image = image
-        UIApplication.shared.isNetworkActivityIndicatorVisible = false
-      }
-    }
-  }
+
+  var mediaItem: T!
   
   override func viewDidLoad() {
     let nc = NotificationCenter.default
@@ -52,5 +40,20 @@ class PhoenixDetailViewController<T: HasMediaObjectAttributes & Requestable>: UI
     }
     
     titleLabel.text = mediaItem?.getTitleWith(identifier: titleLanguageEnum)
+  }
+}
+
+extension PhoenixDetailViewController : HasImageFetcher {
+  func setImageFetcher(_ imageFetcher: ImageFetcher) {
+    self.imageFetcher = imageFetcher
+  }
+  
+  func imageCallback(_ imageResult: UIImage?) {
+    if let image = imageResult {
+      DispatchQueue.main.async {
+        self.posterImageView.image = image
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+      }
+    }
   }
 }

@@ -1,12 +1,13 @@
 import UIKit
 import PhoenixKitsuCore
+import PhoenixKitsuUsers
 
 struct KeychainConfiguration {
   static let serviceName = "PhoenixMobile"
   static let accessGroup: String? = nil
 }
 
-class LoginViewController: UIViewController, HasKitsuHandler {
+class LoginViewController: UIViewController, HasKitsuHandler, HasAuthenticationUtility {
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var usernameField: UITextField!
   @IBOutlet weak var passwordField: UITextField!
@@ -22,9 +23,13 @@ class LoginViewController: UIViewController, HasKitsuHandler {
                                              preferredStyle: .alert)
   
   private var kitsuHandler: KitsuHandler!
+  private var authenticationUtility: AuthenticationUtility!
   
   func setKitsuHandler(_ handler: KitsuHandler) {
     self.kitsuHandler = handler
+  }
+  func setAuthenticationUtility(_ authenticationUtility: AuthenticationUtility) {
+    self.authenticationUtility = authenticationUtility
   }
   
   override func viewDidLoad() {
@@ -36,12 +41,21 @@ class LoginViewController: UIViewController, HasKitsuHandler {
     titleLabel.text = "Login"
   }
   
+  private func handleUserResponse(_ searchResult: SearchResult<User>?) {
+    if let result = searchResult, let user = result.data?.first {
+      authenticationUtility.set(loggedInUser: user)
+      self.dismiss(animated: true)
+    } else {
+      present(loginErrorAlert, animated: true)
+    }
+  }
+  
   private func handleTokenResponse(_ response: TokenResponse?) {
     guard let tokenResponse = response, let accountName = getAccountName() else {
       return self.present(self.loginErrorAlert, animated: true)
     }
     
-    AuthenticationUtility.set(accessToken: tokenResponse.accessToken)
+    authenticationUtility.set(accessToken: tokenResponse.accessToken)
     let passwordItem = KeychainPasswordItem(service: KeychainConfiguration.serviceName,
                                             account: accountName,
                                             accessGroup: KeychainConfiguration.accessGroup)
@@ -50,7 +64,10 @@ class LoginViewController: UIViewController, HasKitsuHandler {
     } catch {
       fatalError("Error updating keychain - \(error)")
     }
-    self.dismiss(animated: true)
+    
+    let filter = ["self" : "true"]
+    let accessToken = authenticationUtility.accessToken
+    kitsuHandler.getCollection(by: filter, accessToken: accessToken, callback: handleUserResponse)
   }
   
   @IBAction func loginClicked(_ sender: AnyObject) {

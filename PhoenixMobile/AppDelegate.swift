@@ -29,17 +29,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     for viewController in navigationController.viewControllers {
       injectKitsuHandler(into: viewController)
       injectImageFetcher(into: viewController)
+      injectAuthenticationUtility(into: viewController)
     }
   }
   
   private func injectKitsuHandler(into viewController: UIViewController) {
-    let kitsuHandler = KitsuHandler(decoder: decoder)
+    let kitsuHandler = KitsuHandler(decoder: decoder, session: nil)
     if let item = viewController as? HasKitsuHandler { item.setKitsuHandler(kitsuHandler) }
   }
-  
   private func injectImageFetcher(into viewController: UIViewController) {
     let imageFetcher = ImageFetcher()
     if let item = viewController as? HasImageFetcher { item.setImageFetcher(imageFetcher) }
+  }
+  private func injectAuthenticationUtility(into viewController: UIViewController) {
+    let authenticationUtility = AuthenticationUtility()
+    if let item = viewController as? HasAuthenticationUtility { item.setAuthenticationUtility(authenticationUtility) }
   }
 
   func applicationWillResignActive(_ application: UIApplication) {

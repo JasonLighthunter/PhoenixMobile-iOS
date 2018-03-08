@@ -28,8 +28,7 @@
 		7CC3225C2007E7D900D689EE /* PhoenixKitsuMedia.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC322542007E7D300D689EE /* PhoenixKitsuMedia.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7CC3225F2007E7D900D689EE /* PhoenixKitsuCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC322562007E7D300D689EE /* PhoenixKitsuCore.framework */; };
 		7CC322602007E7D900D689EE /* PhoenixKitsuCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC322562007E7D300D689EE /* PhoenixKitsuCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7CC322632007E7D900D689EE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC322582007E7D300D689EE /* Alamofire.framework */; };
-		7CC322642007E7D900D689EE /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC322582007E7D300D689EE /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7CC40AA7200F950F00139292 /* HasAuthenticationUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC40AA6200F950F00139292 /* HasAuthenticationUtility.swift */; };
 		7CC747EA200CC0AD001C1958 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC747E9200CC0AD001C1958 /* LoginViewController.swift */; };
 		7CC747EC200CC764001C1958 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC747EB200CC764001C1958 /* KeychainPasswordItem.swift */; };
 		7CC747EE200CCF20001C1958 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC747ED200CCF20001C1958 /* ProfileViewController.swift */; };
@@ -102,13 +101,6 @@
 			remoteGlobalIDString = "PhoenixKitsuCore::PhoenixKitsuCore::Product";
 			remoteInfo = PhoenixKitsuCore;
 		};
-		7CC322572007E7D300D689EE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7CC322442007E7D300D689EE /* PhoenixKitsuMedia.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "Alamofire::Alamofire::Product";
-			remoteInfo = Alamofire;
-		};
 		7CC322592007E7D300D689EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7CC322442007E7D300D689EE /* PhoenixKitsuMedia.xcodeproj */;
@@ -130,13 +122,6 @@
 			remoteGlobalIDString = "PhoenixKitsuCore::PhoenixKitsuCore";
 			remoteInfo = PhoenixKitsuCore;
 		};
-		7CC322652007E7D900D689EE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7CC322442007E7D300D689EE /* PhoenixKitsuMedia.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = "Alamofire::Alamofire";
-			remoteInfo = Alamofire;
-		};
 		7CD92AA0200E578200F89AB7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7CC322442007E7D300D689EE /* PhoenixKitsuMedia.xcodeproj */;
@@ -155,7 +140,6 @@
 			files = (
 				7C0313BD200F85A2008BD42A /* PhoenixKitsuUsers.framework in Embed Frameworks */,
 				7CC322602007E7D900D689EE /* PhoenixKitsuCore.framework in Embed Frameworks */,
-				7CC322642007E7D900D689EE /* Alamofire.framework in Embed Frameworks */,
 				7CD92A9F200E578200F89AB7 /* Requestable.framework in Embed Frameworks */,
 				7CC3225C2007E7D900D689EE /* PhoenixKitsuMedia.framework in Embed Frameworks */,
 			);
@@ -184,6 +168,7 @@
 		7CAFD7D81EF95D9C0028768D /* MangaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MangaTableViewController.swift; path = PhoenixMobile/MangaTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		7CB88945200CDBDF003A7D0C /* AuthenticationUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthenticationUtility.swift; path = PhoenixMobile/AuthenticationUtility.swift; sourceTree = SOURCE_ROOT; };
 		7CC322442007E7D300D689EE /* PhoenixKitsuMedia.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PhoenixKitsuMedia.xcodeproj; path = "../Phoenix-Kitsu-Media/PhoenixKitsuMedia.xcodeproj"; sourceTree = "<group>"; };
+		7CC40AA6200F950F00139292 /* HasAuthenticationUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HasAuthenticationUtility.swift; path = PhoenixMobile/HasAuthenticationUtility.swift; sourceTree = SOURCE_ROOT; };
 		7CC747E9200CC0AD001C1958 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = PhoenixMobile/LoginViewController.swift; sourceTree = SOURCE_ROOT; };
 		7CC747EB200CC764001C1958 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeychainPasswordItem.swift; path = PhoenixMobile/KeychainPasswordItem.swift; sourceTree = SOURCE_ROOT; };
 		7CC747ED200CCF20001C1958 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = PhoenixMobile/ProfileViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -197,7 +182,6 @@
 			files = (
 				7C0313BC200F85A2008BD42A /* PhoenixKitsuUsers.framework in Frameworks */,
 				7CC3225F2007E7D900D689EE /* PhoenixKitsuCore.framework in Frameworks */,
-				7CC322632007E7D900D689EE /* Alamofire.framework in Frameworks */,
 				7CD92A9E200E578200F89AB7 /* Requestable.framework in Frameworks */,
 				7CC3225B2007E7D900D689EE /* PhoenixKitsuMedia.framework in Frameworks */,
 			);
@@ -245,6 +229,7 @@
 				7C48DB6E1EE69FE300BD69C8 /* AnimeTableViewController.swift */,
 				7C48DB671EE69FBE00BD69C8 /* AppDelegate.swift */,
 				7CB88945200CDBDF003A7D0C /* AuthenticationUtility.swift */,
+				7CC40AA6200F950F00139292 /* HasAuthenticationUtility.swift */,
 				7C83EF78200E8CEA0038056C /* HasImageFetcher.swift */,
 				7C91876D200E83F300A3DCCF /* HasKitsuHandler.swift */,
 				7C48DB6C1EE69FE300BD69C8 /* ImageFetcher.swift */,
@@ -270,7 +255,6 @@
 				7CC322522007E7D300D689EE /* PhoenixKitsuMediaTests.xctest */,
 				7CC322542007E7D300D689EE /* PhoenixKitsuMedia.framework */,
 				7CC322562007E7D300D689EE /* PhoenixKitsuCore.framework */,
-				7CC322582007E7D300D689EE /* Alamofire.framework */,
 				7CC3225A2007E7D300D689EE /* Requestable.framework */,
 			);
 			name = Products;
@@ -293,7 +277,6 @@
 			dependencies = (
 				7CC3225E2007E7D900D689EE /* PBXTargetDependency */,
 				7CC322622007E7D900D689EE /* PBXTargetDependency */,
-				7CC322662007E7D900D689EE /* PBXTargetDependency */,
 				7CD92AA1200E578200F89AB7 /* PBXTargetDependency */,
 				7C0313BF200F85A2008BD42A /* PBXTargetDependency */,
 			);
@@ -404,13 +387,6 @@
 			remoteRef = 7CC322552007E7D300D689EE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		7CC322582007E7D300D689EE /* Alamofire.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Alamofire.framework;
-			remoteRef = 7CC322572007E7D300D689EE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		7CC3225A2007E7D300D689EE /* Requestable.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -448,6 +424,7 @@
 				7CC747EC200CC764001C1958 /* KeychainPasswordItem.swift in Sources */,
 				7CC747EE200CCF20001C1958 /* ProfileViewController.swift in Sources */,
 				7C83EF79200E8CEA0038056C /* HasImageFetcher.swift in Sources */,
+				7CC40AA7200F950F00139292 /* HasAuthenticationUtility.swift in Sources */,
 				7C35B37A200F600200ECD28D /* PhoenixItemTableViewController.swift in Sources */,
 				7C48DB721EE69FE300BD69C8 /* ImageFetcher.swift in Sources */,
 				7C48DB711EE69FE300BD69C8 /* AnimeDetailViewController.swift in Sources */,
@@ -474,11 +451,6 @@
 			isa = PBXTargetDependency;
 			name = PhoenixKitsuCore;
 			targetProxy = 7CC322612007E7D900D689EE /* PBXContainerItemProxy */;
-		};
-		7CC322662007E7D900D689EE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Alamofire;
-			targetProxy = 7CC322652007E7D900D689EE /* PBXContainerItemProxy */;
 		};
 		7CD92AA1200E578200F89AB7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -621,7 +593,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6Z7U3Z74Y3;
 				INFOPLIST_FILE = "$(SRCROOT)/PhoenixMobile/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jobcuppen.PhoenixMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -641,7 +613,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6Z7U3Z74Y3;
 				INFOPLIST_FILE = "$(SRCROOT)/PhoenixMobile/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jobcuppen.PhoenixMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";

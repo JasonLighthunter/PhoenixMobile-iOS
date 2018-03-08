@@ -5,6 +5,7 @@ import Requestable
 
 class PhoenixMediaItemTableViewController<T: HasMediaObjectAttributes & Requestable> :
 PhoenixItemTableViewController<T> {
+  
   private func callback(_ searchResult: SearchResult<T>?) {
     if let result = searchResult {
       DispatchQueue.main.async {
