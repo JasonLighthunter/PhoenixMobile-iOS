@@ -1,4 +1,5 @@
 import PhoenixKitsuUsers
+import Foundation
 
 class AuthenticationUtility {
   private(set) var accessToken: String?

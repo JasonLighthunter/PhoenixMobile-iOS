@@ -25,6 +25,11 @@ class ProfileViewController: UIViewController {
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
+    guard authenticationUtility.isAuthenticated, let user = authenticationUtility.loggedInUser else {
+        return
+    }
+    
+    self.user = user
     showProfileInfo()
   }
   
@@ -37,13 +42,7 @@ class ProfileViewController: UIViewController {
   }
   
   func showProfileInfo() {
-    if authenticationUtility.isAuthenticated,
-      let user = authenticationUtility.loggedInUser,
-      let userAttributes = user.attributes
-    {
-      self.user = user
-      profileLabel.text = "Welcome back, " + (userAttributes.name ?? "mysterious stranger")
-    }
+    profileLabel.text = "Welcome back, " + (user?.attributes?.name ?? "mysterious stranger")
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

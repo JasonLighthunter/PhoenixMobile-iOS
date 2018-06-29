@@ -42,7 +42,7 @@ class LoginViewController: UIViewController, HasKitsuHandler, HasAuthenticationU
   }
   
   private func handleUserResponse(_ searchResult: SearchResult<User>?) {
-    if let result = searchResult, let user = result.data?.first {
+    if let result = searchResult, let user = result.data.first {
       authenticationUtility.set(loggedInUser: user)
       self.dismiss(animated: true)
     } else {
@@ -51,14 +51,16 @@ class LoginViewController: UIViewController, HasKitsuHandler, HasAuthenticationU
   }
   
   private func handleTokenResponse(_ response: TokenResponse?) {
-    guard let tokenResponse = response, let accountName = getAccountName() else {
+    let userDefaultsUsername = UserDefaults.standard.value(forKey: "username") as? String
+    
+    guard let tokenResponse = response, let accountName = userDefaultsUsername else {
       return self.present(self.loginErrorAlert, animated: true)
     }
     
     authenticationUtility.set(accessToken: tokenResponse.accessToken)
     let passwordItem = KeychainPasswordItem(service: KeychainConfiguration.serviceName,
-                                            account: accountName,
-                                            accessGroup: KeychainConfiguration.accessGroup)
+                                             account: accountName,
+                                             accessGroup: KeychainConfiguration.accessGroup)
     do {
       try passwordItem.savePassword(tokenResponse.refreshToken)
     } catch {
@@ -83,8 +85,7 @@ class LoginViewController: UIViewController, HasKitsuHandler, HasAuthenticationU
     passwordField.resignFirstResponder()
     
     setAccountName(accountName)
-    
-    kitsuHandler.getTokenResponse(with: accountName, and: password, callback: handleTokenResponse)
+    kitsuHandler.getAccessToken(with: accountName, and: password, callback: handleTokenResponse)
   }
   
   private func getAccountName() -> String? {

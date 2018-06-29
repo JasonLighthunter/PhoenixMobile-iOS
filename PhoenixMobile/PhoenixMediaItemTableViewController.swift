@@ -9,7 +9,7 @@ PhoenixItemTableViewController<T> {
   private func callback(_ searchResult: SearchResult<T>?) {
     if let result = searchResult {
       DispatchQueue.main.async {
-        self.items.append(contentsOf: result.data ?? [])
+        self.items.append(contentsOf: result.data)
         self.addResultToItems(result)
       }
     }
