@@ -6,15 +6,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
   
-  private let decoder = JSONDecoder()
-  private let networkingUtility = NetworkingUtility()
-
+  private let authenticationUtility = AuthenticationUtility()
+  private let kitsuHandler = KitsuHandler(decoder: JSONDecoder(), session: URLSession(configuration: .default))
+  
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
     
     if let root = window?.rootViewController as? UITabBarController {
       handleInjection(for: root)
+    }
+    
+    guard authenticationUtility.isAuthenticated else {
+//      guard let accountName = UserDefaults.value(forKey: "username") as? String else { return true }
+//      let passwordItem = KeychainPasswordItem(service: KeychainConfiguration.serviceName,
+//                                                       account: accountName,
+//                                                       accessGroup: KeychainConfiguration.accessGroup)
+      //guard let refreshtoken = try? passwordItem.readPassword() else { return true }
+      
+      //kitsuHandler.getTokenResponse(with: refreshtoken, callback: <#T##(TokenResponse?) -> ()#>)
+      
+      return true
     }
     return true
   }
@@ -26,19 +38,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       }
     }
   }
-  
   private func handleInjection(for navigationController: UINavigationController) {
     for viewController in navigationController.viewControllers {
       injectKitsuHandler(into: viewController)
+      injectImageFetcher(into: viewController)
+      injectAuthenticationUtility(into: viewController)
     }
   }
   
   private func injectKitsuHandler(into viewController: UIViewController) {
-    let kitsuHandler = KitsuHandler(decoder: decoder, networkingUtility: networkingUtility)
-
-    if let item = viewController as? HasKitsuHandler {
-      item.setKitsuHandler(kitsuHandler)
-    }
+    
+    if let item = viewController as? HasKitsuHandler { item.setKitsuHandler(kitsuHandler) }
+  }
+  private func injectImageFetcher(into viewController: UIViewController) {
+    let imageFetcher = ImageFetcher()
+    if let item = viewController as? HasImageFetcher { item.setImageFetcher(imageFetcher) }
+  }
+  private func injectAuthenticationUtility(into viewController: UIViewController) {
+    if let item = viewController as? HasAuthenticationUtility { item.setAuthenticationUtility(authenticationUtility) }
   }
 
   func applicationWillResignActive(_ application: UIApplication) {

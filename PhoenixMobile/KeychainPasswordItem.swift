@@ -7,6 +7,7 @@
 */
 
 import Foundation
+
 // thrid-party code
 // codebeat:disable[ABC]
 struct KeychainPasswordItem {

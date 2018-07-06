@@ -5,10 +5,11 @@ import Requestable
 
 class PhoenixMediaItemTableViewController<T: HasMediaObjectAttributes & Requestable> :
 PhoenixItemTableViewController<T> {
+  
   private func callback(_ searchResult: SearchResult<T>?) {
     if let result = searchResult {
       DispatchQueue.main.async {
-        self.items.append(contentsOf: result.data ?? [])
+        self.items.append(contentsOf: result.data)
         self.addResultToItems(result)
       }
     }
@@ -27,6 +28,7 @@ PhoenixItemTableViewController<T> {
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let detailcontroller = segue.destination as? PhoenixDetailViewController<T> {
+      detailcontroller.setImageFetcher(self.imageFetcher)
       detailcontroller.mediaItem = items[self.tableView.indexPathForSelectedRow!.row]
     }
   }

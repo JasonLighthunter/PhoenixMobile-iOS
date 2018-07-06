@@ -1,38 +1,66 @@
 import UIKit
 import PhoenixKitsuCore
+import PhoenixKitsuUsers
 
-class ProfileViewController: UIViewController, HasKitsuHandler {
+enum LoginBarItemStatus: String {
+  case login = "Log In"
+  case logout = "Log Out"
+}
+
+class ProfileViewController: UIViewController {
   @IBOutlet weak var profileLabel: UILabel!
   
   private var kitsuHandler: KitsuHandler!
+  private var authenticationUtility: AuthenticationUtility!
   
-  func setKitsuHandler(_ handler: KitsuHandler) {
-    self.kitsuHandler = handler
+  private var loginBarItemStatus: LoginBarItemStatus {
+    get { return authenticationUtility.isAuthenticated ? .logout : .login }
   }
+  
+  private var user : User?
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    showLoginView()
   }
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    showLoginView()
+    guard authenticationUtility.isAuthenticated, let user = authenticationUtility.loggedInUser else {
+        return
+    }
+    
+    self.user = user
+    showProfileInfo()
   }
   
-  func showLoginView() {
-    
-    if !(AuthenticationUtility.isAuthenticated) {
-      
+  @IBAction func LoginBarItemClicked(_ sender: Any) {
+    if loginBarItemStatus == .login {
       performSegue(withIdentifier: "loginView", sender: self)
     } else {
-      profileLabel.text = "you are now logged in"
+      authenticationUtility.logout()
     }
+  }
+  
+  func showProfileInfo() {
+    profileLabel.text = "Welcome back, " + (user?.attributes?.name ?? "mysterious stranger")
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let loginController = segue.destination as? LoginViewController {
       loginController.setKitsuHandler(kitsuHandler)
+      loginController.setAuthenticationUtility(authenticationUtility)
     }
+  }
+}
+
+extension ProfileViewController: HasKitsuHandler {
+  func setKitsuHandler(_ handler: KitsuHandler) {
+    self.kitsuHandler = handler
+  }
+}
+
+extension ProfileViewController: HasAuthenticationUtility {
+  func setAuthenticationUtility(_ authenticationUtility: AuthenticationUtility) {
+    self.authenticationUtility = authenticationUtility
   }
 }

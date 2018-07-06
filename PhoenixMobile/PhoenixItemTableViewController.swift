@@ -10,12 +10,19 @@ UITableViewController {
   var latestNextLink: String?
   var cellIdentifier: String?
   
+  private(set) var imageFetcher: ImageFetcher!
   private(set) var kitsuHandler: KitsuHandler!
 }
 // codebeat:enable[TOO_MANY_IVARS]
 
-extension PhoenixItemTableViewController : HasKitsuHandler {
+extension PhoenixItemTableViewController: HasKitsuHandler {
   func setKitsuHandler(_ handler: KitsuHandler) {
     self.kitsuHandler = handler
+  }
+}
+
+extension PhoenixItemTableViewController: HasImageFetcher {
+  func setImageFetcher(_ imageFetcher: ImageFetcher) {
+    self.imageFetcher = imageFetcher
   }
 }
